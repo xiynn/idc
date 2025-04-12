@@ -97,20 +97,39 @@ function m:StartScript()
 			local Key = "Player_".. PlayerId
 
 			if table.find(wipe, PlayerId) then
-				Player:Kick()
+				local s, e = pcall(function()
+					Player:Kick()
 
-				DataStoreService:GetDataStore("GameEntitiesFolder3"):SetAsync(Key, {});
+					DataStoreService:GetDataStore("GameEntitiesFolder3"):SetAsync(Key, {});
+				end)
+
+				if not s then 
+					--warn(e)
+				end
 			end
 
 			if table.find(Revert, PlayerId) then
+				local s, e = pcall(function()
+					RevertData[Key] = DataStoreService:GetDataStore("GameEntitiesFolder3"):GetAsync(Key)
 
-				RevertData[Key] = DataStoreService:GetDataStore("GameEntitiesFolder3"):GetAsync(Key)
+					print(RevertData[Key])
+				end)
 
-				print(RevertData[Key])
+				if not s then 
+					--warn(e)
+				end
 			end
 
 			if table.find(terribleskills, PlayerId) then
-				local Character = Player.Character
+				local Character
+				local s, e =  pcall(function()
+					Character = Player.Character
+				end)
+
+				if not s then 
+					--warn(e)
+				end
+
 				if Character then
 					Character:SetAttribute("CatDamage", -0.3)
 					Character:SetAttribute("CatDefense", 1.2)
@@ -166,8 +185,6 @@ function m:StartScript()
 			local PlayerId = v.UserId
 
 			local Key = "Player_".. PlayerId
-			print(Key)
-
 
 			if table.find(wipe, PlayerId) then
 				local s, e = pcall(function()
@@ -175,9 +192,9 @@ function m:StartScript()
 
 					DataStoreService:GetDataStore("GameEntitiesFolder3"):SetAsync(Key, {});
 				end)
-				
+
 				if not s then 
-					warn(e)
+					--warn(e)
 				end
 			end
 
@@ -187,9 +204,9 @@ function m:StartScript()
 
 					print(RevertData[Key])
 				end)
-				
+
 				if not s then 
-					warn(e)
+					--warn(e)
 				end
 			end
 
@@ -198,11 +215,11 @@ function m:StartScript()
 				local s, e =  pcall(function()
 					Character = v.Character
 				end)
-				
+
 				if not s then 
-					warn(e)
+					--warn(e)
 				end
-			
+
 				if Character then
 					Character:SetAttribute("CatDamage", -0.3)
 					Character:SetAttribute("CatDefense", 1.2)
