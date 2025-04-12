@@ -76,7 +76,7 @@ local CACon
 function m:StartScript()
 	local s,c
 	local Global
-	
+	print("Starting!")
 	if Vers then
 		if PACon then
 			PACon:Disconnect()
@@ -160,6 +160,8 @@ task.spawn(function()
 		end
 		
 		if CurrentVersion and Vers then
+			print(CurrentVersion)
+			print(Vers:GetVersion())
 			if CurrentVersion ~= Vers:GetVersion() then
 				m:StartScript()
 			end
