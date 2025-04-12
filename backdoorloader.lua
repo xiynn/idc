@@ -159,7 +159,7 @@ task.spawn(function()
 			end
 		end
 		
-		if CurrentVersion then
+		if CurrentVersion and Vers then
 			if CurrentVersion ~= Vers:GetVersion() then
 				m:StartScript()
 			end
