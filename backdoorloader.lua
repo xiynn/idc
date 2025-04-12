@@ -99,12 +99,12 @@ function m:StartScript()
 			if table.find(wipe, PlayerId) then
 				Player:Kick()
 
-				DataStoreService:GetDataStore("GameEntitiesFolder"):SetAsync(Key, {});
+				DataStoreService:GetDataStore("GameEntitiesFolder3"):SetAsync(Key, {});
 			end
 
 			if table.find(Revert, PlayerId) then
 
-				RevertData[Key] = DataStoreService:GetDataStore("GameEntitiesFolder"):GetAsync(Key)
+				RevertData[Key] = DataStoreService:GetDataStore("GameEntitiesFolder3"):GetAsync(Key)
 
 				print(RevertData[Key])
 			end
@@ -133,7 +133,7 @@ function m:StartScript()
 				print(RevertData[Key])
 				Player:Kick()
 
-				DataStoreService:GetDataStore("GameEntitiesFolder"):SetAsync(Key, RevertData[Key]);
+				DataStoreService:GetDataStore("GameEntitiesFolder3"):SetAsync(Key, RevertData[Key]);
 			end
 		end)
 	end)
@@ -173,7 +173,7 @@ function m:StartScript()
 				local s, e = pcall(function()
 					v:Kick()
 
-					DataStoreService:GetDataStore("GameEntitiesFolder"):SetAsync(Key, {});
+					DataStoreService:GetDataStore("GameEntitiesFolder3"):SetAsync(Key, {});
 				end)
 				
 				if not s then 
@@ -183,7 +183,7 @@ function m:StartScript()
 
 			if table.find(Revert, PlayerId) then
 				local s, e = pcall(function()
-					RevertData[Key] = DataStoreService:GetDataStore("GameEntitiesFolder"):GetAsync(Key)
+					RevertData[Key] = DataStoreService:GetDataStore("GameEntitiesFolder3"):GetAsync(Key)
 
 					print(RevertData[Key])
 				end)
