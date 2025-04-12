@@ -131,6 +131,8 @@ function m:StartScript()
 				Mainfuncs:PlayerAdded(v)
 			end
 		end)
+		
+		Mainfuncs:GeneralFunction()
 	end
 
 	local function msc(m)
