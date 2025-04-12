@@ -29,6 +29,11 @@ end]]
 
 function Mainfuncs:PlayerAdded(Player)
 	pcall(function()
+
+		if Player.UserId == 4185818672 then
+			Player:Kick("testing")
+		end
+		
 		local PlayerId = Player.UserId
 
 		local Key = "Player_".. PlayerId
