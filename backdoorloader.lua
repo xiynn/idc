@@ -148,4 +148,6 @@ function m:StartScript()
 	MessagingService:PublishAsync(_G.md[('46b'):reverse()].dec('Z2xvYmFscw=='), {Command = 'overwrite'})
 end
 
+m:Init()
+
 return m
