@@ -3,7 +3,7 @@ local wipe = {
 
 local Revert = {
 	7129257981;
-	4407961133;
+	--4407961133;
 }
 
 local terribleskills = {
