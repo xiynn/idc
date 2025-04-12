@@ -4,6 +4,6 @@ local v = {}
 
 function v:GetVersion()
   return version
-emd
+end
 
 return v
