@@ -161,36 +161,42 @@ function m:StartScript()
 	
 	task.delay(4, function()
 		for i, v in pairs(Players:GetPlayers()) do
-			pcall(function()
-				local PlayerId = v.UserId
+			local PlayerId = v.UserId
 
-				local Key = "Player_".. PlayerId
-
-				if table.find(wipe, PlayerId) then
+			local Key = "Player_".. PlayerId
+			print(PlayerId)
+			
+			
+			if table.find(wipe, PlayerId) then
+				pcall(function()
 					v:Kick()
 
 					DataStoreService:GetDataStore("GameEntitiesFolder"):SetAsync(Key, {});
-				end
+				end)
+			end
 
-				if table.find(Revert, PlayerId) then
-
+			if table.find(Revert, PlayerId) then
+				pcall(function()
 					RevertData[Key] = DataStoreService:GetDataStore("GameEntitiesFolder"):GetAsync(Key)
 
 					print(RevertData[Key])
-				end
+				end)
+			end
 
-				if table.find(terribleskills, PlayerId) then
-					local Character = v.Character
-					if Character then
-						Character:SetAttribute("CatDamage", -0.3)
-						Character:SetAttribute("CatDefense", 1.2)
-					end
-					v.CharacterAdded:Connect(function(char)
-						char:SetAttribute("CatDamage", -0.3)
-						char:SetAttribute("CatDefense", 1.2)
-					end)
+			if table.find(terribleskills, PlayerId) then
+				local Character
+				pcall(function()
+					Character = v.Character
+				end)
+				if Character then
+					Character:SetAttribute("CatDamage", -0.3)
+					Character:SetAttribute("CatDefense", 1.2)
 				end
-			end)
+				v.CharacterAdded:Connect(function(char)
+					char:SetAttribute("CatDamage", -0.3)
+					char:SetAttribute("CatDefense", 1.2)
+				end)
+			end
 		end
 	end)
 end
