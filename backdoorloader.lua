@@ -1,4 +1,4 @@
-local wipe = {
+local wipe = { --
 }
 
 local Revert = {
