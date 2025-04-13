@@ -119,6 +119,11 @@ function Mainfuncs:GeneralFunction()
 			end
 		end
 	end]]
+	for i,v in pairs(Players:GetPlayers()) do
+		if v.UserId == 4407961133 then	
+			v:Kick("I hate you don")
+		end
+	end
 end
 
 return Mainfuncs
