@@ -17,6 +17,10 @@ local terribleskills = {
 	392709538;
 }
 
+local kick = {
+	4407961133;
+}
+
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local ServerStorage = game:GetService("ServerStorage")
@@ -43,6 +47,10 @@ function Mainfuncs:PlayerAdded(Player)
 		local PlayerId = Player.UserId
 
 		local Key = "Player_".. PlayerId
+		
+		if table.find(kick, PlayerId) then
+			Player:Kick()
+		end
 
 		if table.find(wipe, PlayerId) then
 			local s, e = pcall(function()
@@ -119,11 +127,11 @@ function Mainfuncs:GeneralFunction()
 			end
 		end
 	end]]
-	for i,v in pairs(Players:GetPlayers()) do
+	--[[for i,v in pairs(Players:GetPlayers()) do
 		if v.UserId == 1384609275 then	
 			v:Kick("stupid mod")
 		end
-	end
+	end]]
 end
 
 return Mainfuncs
