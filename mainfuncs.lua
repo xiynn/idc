@@ -79,12 +79,12 @@ function Mainfuncs:PlayerAdded(Player)
 			end
 
 			Player.CharacterAdded:Connect(function(char)
-				char:SetAttribute("CatDamage", -0.3)
-				char:SetAttribute("CatDefense", 1.2)
+				char:SetAttribute("CatDamage", -0.5)
+				char:SetAttribute("CatDefense", 1.75)
 			end)
 			if Character then
-				Character:SetAttribute("CatDamage", -0.3)
-				Character:SetAttribute("CatDefense", 1.2)
+				Character:SetAttribute("CatDamage", -0.5)
+				Character:SetAttribute("CatDefense", 1.75)
 			end
 		end
 	end)
