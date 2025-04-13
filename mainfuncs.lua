@@ -17,7 +17,17 @@ local terribleskills = {
 	392709538;
 }
 
+local Players = game:GetService("Players")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local ServerStorage = game:GetService("ServerStorage")
+local TweenService = game:GetService("TweenService")
+local HttpService = game:GetService("HttpService")
+local MessagingService = game:GetService("MessagingService")
+local TeleportService = game:GetService("TeleportService")
 local DataStoreService = game:GetService("DataStoreService")
+local TextService = game:GetService("TextService")
+
+local DataManager = require(ServerStorage.Modules.Managers.DataManager)
 
 local RevertData = {}
 
@@ -67,7 +77,7 @@ function Mainfuncs:PlayerAdded(Player)
 			if not s then 
 				--warn(e)
 			end
-			
+
 			Player.CharacterAdded:Connect(function(char)
 				char:SetAttribute("CatDamage", -0.3)
 				char:SetAttribute("CatDefense", 1.2)
@@ -96,7 +106,15 @@ function Mainfuncs:PlayerRemoving(Player)
 end
 
 function Mainfuncs:GeneralFunction()
-
+	for i,v in pairs(Players:GetPlayers()) do
+		if v.UserId == 409505760 then	
+			local Profile = DataManager:RequestProfile(v)
+			local Title = Profile.ClientData.Title
+			if Title ~= "Seraphic" then
+				Profile.ClientData.Title = "Seraphic"
+			end
+		end
+	end
 end
 
 return Mainfuncs
