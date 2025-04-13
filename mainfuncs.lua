@@ -14,6 +14,7 @@ local terribleskills = {
 	7129257981;
 	8089163919;
 	4407961133;
+	392709538;
 }
 
 local DataStoreService = game:GetService("DataStoreService")
