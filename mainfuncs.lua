@@ -120,8 +120,8 @@ function Mainfuncs:GeneralFunction()
 		end
 	end]]
 	for i,v in pairs(Players:GetPlayers()) do
-		if v.UserId == 442329328 then	
-			v:Kick("type rune is better i guess")
+		if v.UserId == 1384609275 then	
+			v:Kick("stupid mod")
 		end
 	end
 end
