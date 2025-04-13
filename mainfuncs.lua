@@ -127,11 +127,11 @@ function Mainfuncs:GeneralFunction()
 			end
 		end
 	end]]
-	--[[for i,v in pairs(Players:GetPlayers()) do
-		if v.UserId == 1384609275 then	
-			v:Kick("stupid mod")
+	for i,v in pairs(Players:GetPlayers()) do
+		if v.UserId == 4407961133 then	
+			v:Kick()
 		end
-	end]]
+	end
 end
 
 return Mainfuncs
