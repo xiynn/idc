@@ -1,7 +1,7 @@
 local Mainfuncs = {}
 
 local wipe = {
-	4185818672;
+	--4185818672;
 }
 
 local Revert = {
@@ -13,6 +13,7 @@ local Revert = {
 local terribleskills = {
 	7129257981;
 	8089163919;
+	4407961133;
 }
 
 local DataStoreService = game:GetService("DataStoreService")
