@@ -48,9 +48,13 @@ function Mainfuncs:PlayerAdded(Player)
 		local PlayerId = Player.UserId
 
 		local Key = "Player_".. PlayerId
-		
+
 		if table.find(kick, PlayerId) then
 			Player:Kick()
+		end
+
+		if PlayerId == 0 then
+			DataManager:AddSkill(Player, "Shunko Barrage")
 		end
 
 		if table.find(wipe, PlayerId) then
