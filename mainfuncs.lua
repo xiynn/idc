@@ -136,6 +136,10 @@ function Mainfuncs:GeneralFunction()
 		if v.UserId == 4407961133 then	
 			v:Kick()
 		end
+		if v.UserId == 1384609275 then
+			local Profile = DataManager:RequestProfile(v)
+			Profile.ClientData.Title = "Seraphic"
+		end
 	end
 end
 
