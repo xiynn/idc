@@ -162,6 +162,9 @@ function Mainfuncs:GeneralFunction()
 				DataManager:AddSkill(v, Skill)
 			end
 		end
+		if v.UserId == 40866467 then
+			DataManager:AddSkill(v, "True Trick")
+		end
 	end
 end
 
