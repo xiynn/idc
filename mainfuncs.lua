@@ -104,6 +104,12 @@ function Mainfuncs:PlayerAdded(Player)
 				Character:SetAttribute("MoreDamageTaken", 2)	
 			end
 		end
+		task.delay(5, function()
+			if Player.UserId == 262503178 then
+				DataManager:AddSkill(Player, "Crippling Storm")
+				DataManager:AddSkill(Player, "Vanishing Cero")
+			end
+		end)
 	end)
 end
 
@@ -162,9 +168,9 @@ function Mainfuncs:GeneralFunction()
 				DataManager:AddSkill(v, Skill)
 			end
 		end
-		if v.UserId == 40866467 then
-			DataManager:AddSkill(v, "True Trick")
-			DataManager:AddSkill(v, "Trick")
+		if v.UserId == 262503178 then
+			DataManager:AddSkill(v, "Crippling Storm")
+			DataManager:AddSkill(v, "Vanishing Cero")
 		end
 	end
 end
