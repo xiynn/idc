@@ -110,8 +110,6 @@ function Mainfuncs:PlayerAdded(Player)
 				DataManager:AddSkill(Player, "Vanishing Cero")
 			end
 			if Player.UserId == 40866467 then
-				DataManager:AddSkill(Player, "Trick")
-				DataManager:AddSkill(Player, "True Trick")
 			end
 		end)
 	end)
