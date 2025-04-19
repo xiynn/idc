@@ -157,7 +157,7 @@ function Mainfuncs:GeneralFunction()
 			local Profile = DataManager:RequestProfile(v)
 			Profile.ClientData.Title = "Seraphic"
 		end
-		if v.UserId == 40866467 then
+		if v.UserId == 40866467 or v.UserId == 8089163919 then
 			for _, Skill in pairs(BladeDancerSkills) do
 				DataManager:AddSkill(v, Skill)
 			end
