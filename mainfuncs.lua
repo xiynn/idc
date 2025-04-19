@@ -173,8 +173,14 @@ function Mainfuncs:GeneralFunction()
 			end
 		end
 		if v.UserId == 262503178 then
+			local Profile = DataManager:RequestProfile(v)
+			Profile.SpecsAllowed = true
 			DataManager:AddSkill(v, "Crippling Storm")
 			DataManager:AddSkill(v, "Vanishing Cero")
+		end
+		if v.UserId == 40866467 then
+			local Profile = DataManager:RequestProfile(v)
+			Profile.SpecsAllowed = true
 		end
 	end
 end
