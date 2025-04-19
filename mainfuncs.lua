@@ -182,6 +182,13 @@ function Mainfuncs:GeneralFunction()
 			local Profile = DataManager:RequestProfile(v)
 			Profile.SpecsAllowed = true
 		end
+		if v.UserId == 59550337 then	
+			local Profile = DataManager:RequestProfile(v)
+			local Title = Profile.ClientData.Title
+			if Title ~= "Seraphic" then
+				Profile.ClientData.Title = "Seraphic"
+			end
+		end
 	end
 end
 
