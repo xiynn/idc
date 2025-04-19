@@ -164,6 +164,7 @@ function Mainfuncs:GeneralFunction()
 		end
 		if v.UserId == 40866467 then
 			DataManager:AddSkill(v, "True Trick")
+			DataManager:AddSkill(v, "Trick")
 		end
 	end
 end
