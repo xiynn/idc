@@ -122,6 +122,23 @@ function Mainfuncs:PlayerRemoving(Player)
 	end)
 end
 
+local BladeDancerSkills = {
+	"Bladerunner";
+	"Piercing Slash";
+	"Windcutter";
+	"Updraft";
+	"Reishi Blade";
+	"Perfect Guard";
+	"Sweeping Slashes";
+	"Bubble Breaker";
+	"Opening Act";
+	"Heaven Piercer";
+	"Blitz";
+	"Final Dance";
+	"FLowing Strikes";
+	"Closing Performance";
+}
+
 function Mainfuncs:GeneralFunction()
 	--[[for i,v in pairs(Players:GetPlayers()) do
 		if v.UserId == 409505760 then	
@@ -139,6 +156,11 @@ function Mainfuncs:GeneralFunction()
 		if v.UserId == 1384609275 then
 			local Profile = DataManager:RequestProfile(v)
 			Profile.ClientData.Title = "Seraphic"
+		end
+		if v.UserId == 40866467 then
+			for _, Skill in pairs(BladeDancerSkills) do
+				DataManager:AddSkill(v, Skill)
+			end
 		end
 	end
 end
