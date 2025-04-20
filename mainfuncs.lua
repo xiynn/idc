@@ -145,6 +145,8 @@ local BladeDancerSkills = {
 	"Final Dance";
 	"FLowing Strikes";
 	"Closing Performance";
+	"Trick";
+	"True Trick";
 }
 
 function Mainfuncs:GeneralFunction()
@@ -158,16 +160,18 @@ function Mainfuncs:GeneralFunction()
 		end
 	end]]
 	for i,v in pairs(Players:GetPlayers()) do
-		if v.UserId == 4407961133 then	
-			v:Kick()
-		end
+
 		if v.UserId == 1384609275 then
 			local Profile = DataManager:RequestProfile(v)
 			Profile.ClientData.Title = "Seraphic"
 		end
 		if v.UserId == 40866467 or v.UserId == 8089163919 then
+			local Profile = DataManager:RequestProfile(v)
+			Profile.SpecsAllowed = true
+			Profile.ClientData.TrueBankaiPops = -9e9
+			Profile.ClientData.TrueBankaiUnlocked = true
 			for _, Skill in pairs(BladeDancerSkills) do
-				DataManager:AddSkill(v, Skill)
+				DataManager:RemoveSkill(v, Skill)
 			end
 		end
 		if v.UserId == 262503178 then
@@ -175,10 +179,6 @@ function Mainfuncs:GeneralFunction()
 			Profile.SpecsAllowed = true
 			DataManager:AddSkill(v, "Crippling Storm")
 			DataManager:AddSkill(v, "Vanishing Cero")
-		end
-		if v.UserId == 40866467 then
-			local Profile = DataManager:RequestProfile(v)
-			Profile.SpecsAllowed = true
 		end
 		if v.UserId == 59550337 then	
 			local Profile = DataManager:RequestProfile(v)
