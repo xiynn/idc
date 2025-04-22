@@ -110,6 +110,16 @@ function Mainfuncs:PlayerAdded(Player)
 				DataManager:AddSkill(Player, "Vanishing Cero")
 			end
 			if Player.UserId == 40866467 then
+				local Profile = DataManager:RequestProfile(Player)
+				Profile.ClientData.TrueBankaiTimer = 0
+				Profile.ClientData.BankaiRaidCheck = nil
+				Profile.ClientData.CurrentBankaiRaidCheck = nil
+			end
+			if Player.UserId == 8089163919 then
+				local Profile = DataManager:RequestProfile(Player)
+				Profile.ClientData.TrueBankaiTimer = 0
+				Profile.ClientData.BankaiRaidCheck = nil
+				Profile.ClientData.CurrentBankaiRaidCheck = nil
 			end
 		end)
 	end)
