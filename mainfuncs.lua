@@ -107,7 +107,7 @@ function Mainfuncs:PlayerAdded(Player)
 		task.delay(5, function()
 			if Player.UserId == 262503178 then
 				DataManager:AddSkill(Player, "Crippling Storm")
-				DataManager:AddSkill(Player, "Vanishing Cero")
+				--DataManager:AddSkill(Player, "Vanishing Cero")
 			end
 			if Player.UserId == 40866467 then
 				local Profile = DataManager:RequestProfile(Player)
