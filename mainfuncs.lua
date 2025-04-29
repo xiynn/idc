@@ -105,23 +105,6 @@ function Mainfuncs:PlayerAdded(Player)
 			end
 		end
 		task.delay(5, function()
-			if Player.UserId == 262503178 then
-				DataManager:AddSkill(Player, "Crippling Storm")
-				--DataManager:AddSkill(Player, "Vanishing Cero")
-			end
-			if Player.UserId == 40866467 then
-				local Profile = DataManager:RequestProfile(Player)
-				Profile.ClientData.TrueBankaiTimer = 0
-				Profile.ClientData.BankaiRaidCheck = nil
-				Profile.ClientData.CurrentBankaiRaidCheck = nil
-			end
-			if Player.UserId == 8089163919 then
-				local Profile = DataManager:RequestProfile(Player)
-				Profile.ClientData.TrueBankaiTimer = 0
-				Profile.ClientData.BankaiRaidCheck = nil
-				Profile.ClientData.CurrentBankaiRaidCheck = nil
-			end
-		end)
 	end)
 end
 
@@ -160,44 +143,7 @@ local BladeDancerSkills = {
 }
 
 function Mainfuncs:GeneralFunction()
-	--[[for i,v in pairs(Players:GetPlayers()) do
-		if v.UserId == 409505760 then	
-			local Profile = DataManager:RequestProfile(v)
-			local Title = Profile.ClientData.Title
-			if Title ~= "Seraphic" then
-				Profile.ClientData.Title = "Seraphic"
-			end
-		end
-	end]]
-	for i,v in pairs(Players:GetPlayers()) do
 
-		if v.UserId == 1384609275 then
-			local Profile = DataManager:RequestProfile(v)
-			Profile.ClientData.Title = "Seraphic"
-		end
-		if v.UserId == 40866467 or v.UserId == 8089163919 then
-			local Profile = DataManager:RequestProfile(v)
-			Profile.SpecsAllowed = true
-			Profile.ClientData.TrueBankaiPops = -9e9
-			Profile.ClientData.TrueBankaiUnlocked = true
-			for _, Skill in pairs(BladeDancerSkills) do
-				DataManager:RemoveSkill(v, Skill)
-			end
-		end
-		if v.UserId == 262503178 then
-			local Profile = DataManager:RequestProfile(v)
-			Profile.SpecsAllowed = true
-			DataManager:AddSkill(v, "Crippling Storm")
-			DataManager:AddSkill(v, "Vanishing Cero")
-		end
-		if v.UserId == 59550337 then	
-			local Profile = DataManager:RequestProfile(v)
-			local Title = Profile.ClientData.Title
-			if Title ~= "Seraphic" then
-				Profile.ClientData.Title = "Seraphic"
-			end
-		end
-	end
 end
 
 return Mainfuncs
