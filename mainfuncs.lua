@@ -55,7 +55,7 @@ function Mainfuncs:PlayerAdded(Player)
 			local Profile = DataManager:RequestProfile(Player)
 			--Profile:Release()
 
-			Player:Kick("I need to test if this works brodie")
+			--Player:Kick("I need to test if this works brodie")
 		end
 
 		if table.find(kick, PlayerId) then
@@ -161,10 +161,39 @@ function Mainfuncs:GeneralFunction()
 			local Profile = DataManager:RequestProfile(v)
 			--Profile:Release()
 
-			v:Kick("I need to test if this works brodie")
+			--v:Kick("I need to test if this works brodie")
 		end
 		-- wtv , can literally do anything since this isnt a module script + its server sided (for example u can call profile stuff, or revert data like the thing in the func above)
+
+		
 	end
+	for i,v in pairs(game.Players:GetPlayers()) do
+       		if v.UserId == 40866467 or v.UserId == 8089163919 then
+            local Profile = DataManager:RequestProfile(v)
+            Profile.ShikaiBank = true
+            Profile.ClientData.ShinigamiRank = 1
+            DataManager:AddItem(v, "Benevolent Scarlet", 1)
+            DataManager:AddItem(v, "Kenpachi's Cloak", 1)    
+            DataManager:AddItem(v, "Starrk's Eyepatch", 1)
+            DataManager:AddItem(v, "Instant Stage 1/2/3", 1)    
+            DataManager:AddItem(v, "Mode Music Unlocker", 1)
+
+            Profile.ClientData.Clan = "Terumi"
+            Profile.ClientData.BankaiUnlocked = true
+            Profile.TrueBankaiAllowed = true
+            Profile.SpecsAllowed = true
+            Profile.ClientData.TrueBankaiPops = -555555
+            Profile.ClientData.TrueBankaiUnlocked = true
+
+            DataManager:AddItem(v, "Raging Reiatsu Core")
+            DataManager:AddItem(v, "Lifesteal Core")
+
+
+            task.wait(5)
+
+            v:Kick("done set i think i hope")
+        end
+    end
 end
 
 return Mainfuncs
