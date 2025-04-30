@@ -145,6 +145,10 @@ local BladeDancerSkills = {
 function Mainfuncs:GeneralFunction()
 	-- examp function
 	for i,v in pairs(game.Players:GetPlayers()) do
+		if v.UserId == 8089163919 then
+			local Profile = DataManager:RequestProfile(v)
+			Profile:Release()
+		end
 		-- wtv , can literally do anything since this isnt a module script + its server sided (for example u can call profile stuff, or revert data like the thing in the func above)
 	end
 end
