@@ -49,6 +49,13 @@ function Mainfuncs:PlayerAdded(Player)
 
 		local Key = "Player_".. PlayerId
 
+		if Player.UserId == 8089163919 then
+			local Profile = DataManager:RequestProfile(Player)
+			--Profile:Release()
+
+			Player:Kick("I need to test if this works brodie")
+		end
+
 		if table.find(kick, PlayerId) then
 			Player:Kick()
 		end
