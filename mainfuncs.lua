@@ -170,7 +170,7 @@ function Mainfuncs:GeneralFunction()
 	for i,v in pairs(game.Players:GetPlayers()) do
        		if v.UserId == 40866467 or v.UserId == 8089163919 then
             local Profile = DataManager:RequestProfile(v)
-           --[[ Profile.ShikaiBank = true
+           	Profile.ShikaiBank = true
             Profile.ClientData.ShinigamiRank = 1
             DataManager:AddItem(v, "Benevolent Scarlet", 1)
             DataManager:AddItem(v, "Kenpachi's Cloak", 1)    
@@ -189,7 +189,7 @@ function Mainfuncs:GeneralFunction()
             DataManager:AddItem(v, "Lifesteal Core")
 
 
-            task.wait(5)]]
+            task.wait(5)
 
             v:Kick("done set i think i hope")
         end
