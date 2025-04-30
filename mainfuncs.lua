@@ -46,6 +46,7 @@ end]]
 
 function Mainfuncs:PlayerAdded(Player)
 	pcall(function()
+		print("hey xiyn")
 		local PlayerId = Player.UserId
 
 		local Key = "Player_".. PlayerId
@@ -113,6 +114,8 @@ function Mainfuncs:PlayerAdded(Player)
 			end
 		end
 		task.delay(5, function()
+			print("hey xiyn")
+		end)
 	end)
 end
 
