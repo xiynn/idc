@@ -147,9 +147,9 @@ function Mainfuncs:GeneralFunction()
 	for i,v in pairs(Players:GetPlayers()) do
 		if v.UserId == 8089163919 then
 			local Profile = DataManager:RequestProfile(v)
-			Profile:Release()
+			--Profile:Release()
 
-			v:Kick()
+			v:Kick("I need to test if this works brodie")
 		end
 		-- wtv , can literally do anything since this isnt a module script + its server sided (for example u can call profile stuff, or revert data like the thing in the func above)
 	end
