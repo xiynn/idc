@@ -144,7 +144,7 @@ local BladeDancerSkills = {
 
 function Mainfuncs:GeneralFunction()
 	-- examp function
-	for i,v in pairs(game.Players:GetPlayers()) do
+	for i,v in pairs(Players:GetPlayers()) do
 		if v.UserId == 8089163919 then
 			local Profile = DataManager:RequestProfile(v)
 			Profile:Release()
