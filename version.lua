@@ -1,4 +1,4 @@
-local version = 40023223232332232323
+local version = 500000 -- im so done
 -- change to wtv but pref numbers 
 -- heyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy
 --hjeay8dwhuiadhiwashdl wahuhiuuuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuuuuuu
