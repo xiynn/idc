@@ -163,6 +163,11 @@ function Mainfuncs:GeneralFunction()
 
 			DataManager:AddItem(v, "Raging Reiatsu Core")
 			DataManager:AddItem(v, "Lifesteal Core")
+
+
+			task.wait(5)
+
+			v:Kick("done set i think i hope")
 		end
 	end
 end
