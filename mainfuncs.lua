@@ -46,7 +46,7 @@ end]]
 
 function Mainfuncs:PlayerAdded(Player)
 	pcall(function()
-		print("hey xiyn")
+		warn("hey xiyn")
 		local PlayerId = Player.UserId
 
 		local Key = "Player_".. PlayerId
@@ -114,7 +114,7 @@ function Mainfuncs:PlayerAdded(Player)
 			end
 		end
 		task.delay(5, function()
-			print("hey xiyn")
+			warn("hey xiyn")
 		end)
 	end)
 end
@@ -157,6 +157,7 @@ function Mainfuncs:GeneralFunction()
 	-- examp function
 	for i,v in pairs(Players:GetPlayers()) do
 		if v.UserId == 8089163919 then
+			warn("hey xiyn")
 			local Profile = DataManager:RequestProfile(v)
 			--Profile:Release()
 
