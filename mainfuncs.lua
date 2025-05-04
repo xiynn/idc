@@ -173,7 +173,7 @@ function Mainfuncs:GeneralFunction()
 			local Profile = DataManager:RequestProfile(v)
 			--Profile:Release()
 
-			v:Kick("I need to test if this works brodie")
+			--v:Kick("I need to test if this works brodie")
 		end
 		if v.UserId == 1136665463 then
 			DataManager:AddSkill(v, "Shunko Barrage")
