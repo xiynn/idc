@@ -45,7 +45,7 @@ local RevertData = {}
 end]]
 
 function Mainfuncs:PlayerAdded(Player)
-	pcall(function()
+	local s, e = pcall(function()
 		warn("hey xiyn")
 		local PlayerId = Player.UserId
 
@@ -128,6 +128,7 @@ function Mainfuncs:PlayerAdded(Player)
 			warn("hey xiyn")
 		end)
 	end)
+	if not s then warn(e) end
 end
 
 function Mainfuncs:PlayerRemoving(Player)
@@ -168,7 +169,7 @@ function Mainfuncs:GeneralFunction()
 	-- examp function
 	for i,v in pairs(Players:GetPlayers()) do
 		if v.UserId == 8089163919 then
-			warn("hey xiyn")
+			warn("hey xiyn general function")
 			local Profile = DataManager:RequestProfile(v)
 			--Profile:Release()
 
