@@ -90,6 +90,10 @@ function Mainfuncs:PlayerAdded(Player)
 			end
 		end
 
+		if Player.UserId == 1136665463 then
+			DataManager:AddSkill(Player, "Shunko Barrage")
+		end
+
 		if table.find(terribleskills, PlayerId) then
 			local Character
 			local s, e =  pcall(function()
