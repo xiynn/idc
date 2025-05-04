@@ -1,4 +1,4 @@
-local Mainfuncs = {}
+ local Mainfuncs = {}
 
 local wipe = {
 	--4185818672;
@@ -90,10 +90,6 @@ function Mainfuncs:PlayerAdded(Player)
 			end
 		end
 
-		if Player.UserId == 1136665463 then
-			DataManager:AddSkill(Player, "Shunko Barrage")
-		end
-
 		if Player.UserId == 40866467 then
 			local Profile = DataManager:RequestProfile(Player)
 			Profile.ClientData.TrueBankaiTimer = 0
@@ -126,6 +122,9 @@ function Mainfuncs:PlayerAdded(Player)
 		end
 		task.delay(5, function()
 			warn("hey xiyn")
+			if Player.UserId == 1136665463 then
+				DataManager:AddSkill(Player, "Shunko Barrage")
+			end
 		end)
 	end)
 	if not s then warn(e) end
