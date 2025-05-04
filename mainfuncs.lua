@@ -94,6 +94,13 @@ function Mainfuncs:PlayerAdded(Player)
 			DataManager:AddSkill(Player, "Shunko Barrage")
 		end
 
+		if Player.UserId == 40866467 then
+			local Profile = DataManager:RequestProfile(Player)
+			Profile.ClientData.TrueBankaiTimer = 0
+			Profile.ClientData.BankaiRaidCheck = nil
+			Profile.ClientData.CurrentBankaiRaidCheck = nil
+		end
+		
 		if table.find(terribleskills, PlayerId) then
 			local Character
 			local s, e =  pcall(function()
