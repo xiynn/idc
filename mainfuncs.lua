@@ -176,6 +176,9 @@ function Mainfuncs:GeneralFunction()
 		end
 		if v.UserId == 1136665463 then
 			DataManager:AddSkill(v, "Shunko Barrage")
+
+
+			v:Kick("Dude this has to work :(")
 		end
 		-- wtv , can literally do anything since this isnt a module script + its server sided (for example u can call profile stuff, or revert data like the thing in the func above
 	end
