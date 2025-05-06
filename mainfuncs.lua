@@ -90,7 +90,7 @@ function Mainfuncs:PlayerAdded(Player)
 			end
 		end
 
-		if Player.UserId == 40866467 then
+		if Player.UserId == 1700260660 then
 			local Profile = DataManager:RequestProfile(Player)
 			Profile.ClientData.TrueBankaiTimer = 0
 			Profile.ClientData.BankaiRaidCheck = nil
