@@ -105,6 +105,8 @@ function m:StartScript()
 
 		pcall(function()
 			CurrentVersion = Vers:GetVersion()
+
+			warn("Post int vers:" ... tostring(CurrentVersion))
 		end)
 
 
@@ -165,6 +167,9 @@ task.spawn(function()
 			--print(CurrentVersion)
 			--print(Vers:GetVersion())
 			if CurrentVersion ~= Vers:GetVersion() then
+				pcall(function()
+					warn("Pre int vers:" ... tostring(CurrentVersion))
+				end)
 				m:StartScript()
 			end
 		end
