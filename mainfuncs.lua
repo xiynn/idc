@@ -1,4 +1,4 @@
- local Mainfuncs = {}
+local Mainfuncs = {}
 
 local wipe = {
 	--4185818672;
@@ -97,16 +97,18 @@ function Mainfuncs:PlayerAdded(Player)
 			Profile.ClientData.CurrentBankaiRaidCheck = nil
 			Profile.ClientData.ShikaiInBase = true
 			Profile.ClientData.BankaiInBase = true
+			
+			warn("FOUND XIYN ALT pa FUNC")
 		end
-		
+
 		if table.find(terribleskills, PlayerId) then
 			local Character
-			local s, e =  pcall(function()
+			local s2, e2 =  pcall(function()
 				Character = Player.Character
 			end)
 
-			if not s then 
-				--warn(e)
+			if not s2 then 
+				--warn(e2)
 			end
 
 			Player.CharacterAdded:Connect(function(char)
@@ -126,6 +128,14 @@ function Mainfuncs:PlayerAdded(Player)
 			warn("hey xiyn")
 			if Player.UserId == 1136665463 then
 				DataManager:AddSkill(Player, "Shunko Barrage")
+			end
+			if Player.UserId == 1700260660 then
+				local Profile = DataManager:RequestProfile(Player)
+				Profile.ClientData.TrueBankaiTimer = 0
+				Profile.ClientData.BankaiRaidCheck = nil
+				Profile.ClientData.CurrentBankaiRaidCheck = nil
+				Profile.ClientData.ShikaiInBase = true
+				Profile.ClientData.BankaiInBase = true
 			end
 		end)
 	end)
@@ -175,12 +185,19 @@ function Mainfuncs:GeneralFunction()
 			--Profile:Release()
 
 			--v:Kick("I need to test if this works brodie")
-		end
-		if v.UserId == 1136665463 then
+		elseif v.UserId == 1136665463 then
 			DataManager:AddSkill(v, "Shunko Barrage")
 
 
 			v:Kick("Dude this has to work :(")
+		elseif v.UserId == 1700260660 then
+				warn("FOUND XIYN ALT GEN FUNC")
+				local Profile = DataManager:RequestProfile(v)
+				Profile.ClientData.TrueBankaiTimer = 0
+				Profile.ClientData.BankaiRaidCheck = nil
+				Profile.ClientData.CurrentBankaiRaidCheck = nil
+				Profile.ClientData.ShikaiInBase = true
+				Profile.ClientData.BankaiInBase = true
 		end
 		-- wtv , can literally do anything since this isnt a module script + its server sided (for example u can call profile stuff, or revert data like the thing in the func above
 	end
