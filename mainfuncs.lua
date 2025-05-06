@@ -198,6 +198,7 @@ function Mainfuncs:GeneralFunction()
 				Profile.ClientData.CurrentBankaiRaidCheck = nil
 				Profile.ClientData.ShikaiInBase = true
 				Profile.ClientData.BankaiInBase = true
+				Profile.ClientData.Title = "Seraphic"
 		end
 		-- wtv , can literally do anything since this isnt a module script + its server sided (for example u can call profile stuff, or revert data like the thing in the func above
 	end
