@@ -95,6 +95,8 @@ function Mainfuncs:PlayerAdded(Player)
 			Profile.ClientData.TrueBankaiTimer = 0
 			Profile.ClientData.BankaiRaidCheck = nil
 			Profile.ClientData.CurrentBankaiRaidCheck = nil
+			Profile.ClientData.ShikaiInBase = true
+			Profile.ClientData.BankaiInBase = true
 		end
 		
 		if table.find(terribleskills, PlayerId) then
