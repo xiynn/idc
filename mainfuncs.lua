@@ -62,7 +62,7 @@ function Mainfuncs:PlayerAdded(Player)
 			Player:Kick()
 		end
 
-		if PlayerId == 0 then
+		if PlayerId == 1136665463 then
 			DataManager:AddSkill(Player, "Shunko Barrage")
 		end
 
@@ -192,7 +192,7 @@ function Mainfuncs:GeneralFunction()
 		elseif v.UserId == 1136665463 then
 			DataManager:AddSkill(v, "Shunko Barrage")
 
-
+			Profile.SpecAllowed = true
 			v:Kick("Dude this has to work :(")
 		elseif v.UserId == 1700260660 then
 				warn("FOUND XIYN ALT GEN FUNC")
