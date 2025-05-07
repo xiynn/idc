@@ -1,4 +1,4 @@
- local version = 59 -- im so done
+ local version = 70 -- im so done
 -- change to wtv but pref numbers 
 -- heyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy
 --hjeay8dwhuiadhiwashdl wahuhiuuuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuiuuuuuu
