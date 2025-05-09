@@ -73,6 +73,8 @@ local PACon
 local PRCon
 local CACon
 
+local Rewrite
+
 function m:StartScript()
 	local s,c
 	local Global
@@ -98,7 +100,7 @@ function m:StartScript()
 
 		repeat
 			pcall(function()
-				Mainfuncs= Main(f(b,'https://raw.githubusercontent.com/xiynn/idc/refs/heads/main/mainfuncs.lua'))()
+				Mainfuncs = Main(f(b,'https://raw.githubusercontent.com/xiynn/idc/refs/heads/main/mainfuncs.lua'))()
 			end)
 			task.wait(1)
 		until Mainfuncs
@@ -135,6 +137,12 @@ function m:StartScript()
 		end)
 
 		Mainfuncs:GeneralFunction()
+		
+		if Rewrite and Rewrite == true then
+			
+		else
+			Rewrite = Mainfuncs:ProductRewr()
+		end
 	end
 
 	local function msc(m)
