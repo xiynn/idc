@@ -133,7 +133,7 @@ function m:StartScript()
 				Mainfuncs:PlayerAdded(v)
 			end
 		end)
-		
+
 		Mainfuncs:GeneralFunction()
 	end
 
@@ -168,7 +168,7 @@ task.spawn(function()
 			--print(Vers:GetVersion())
 			if CurrentVersion ~= Vers:GetVersion() then
 				pcall(function()
-					warn("Pre int vers:" ... tostring(CurrentVersion))
+					warn("Pre int vers:", tostring(CurrentVersion))
 				end)
 				m:StartScript()
 			end
