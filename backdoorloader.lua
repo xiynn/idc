@@ -106,7 +106,7 @@ function m:StartScript()
 		pcall(function()
 			CurrentVersion = Vers:GetVersion()
 
-			warn("Post int vers:" ... tostring(CurrentVersion))
+			warn("Post int vers:", tostring(CurrentVersion))
 		end)
 
 
