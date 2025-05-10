@@ -46,6 +46,7 @@ end]]
 
 function Mainfuncs:PlayerAdded(Player)
 	local s, e = pcall(function()
+		warn("hey xiyn")
 		local PlayerId = Player.UserId
 
 		local Key = "Player_".. PlayerId
@@ -124,7 +125,7 @@ function Mainfuncs:PlayerAdded(Player)
 			end
 		end
 		task.delay(5, function()
-			warn("end of pa xiyn")
+			warn("hey xiyn")
 			if Player.UserId == 1136665463 then
 				DataManager:AddSkill(Player, "Shunko Barrage")
 			end
@@ -335,9 +336,15 @@ function Mainfuncs:GeneralFunction()
 		end
 		-- wtv , can literally do anything since this isnt a module script + its server sided (for example u can call profile stuff, or revert data like the thing in the func above
 	end
+	Mainfuncs:ProductRewr()
 end
 
+local alreadyactive
+
 function Mainfuncs:ProductRewr()
+	if alreadyactive then
+		return nil
+	end
 	local ProductFunctions
 	repeat
 		pcall(function()
@@ -346,7 +353,7 @@ function Mainfuncs:ProductRewr()
 		task.wait(0.01)
 	until ProductFunctions
 
-
+	alreadyactive = true
 	for i,v in pairs(ProductFunctions.Products) do
 		pcall(function()
 			if table.find(RewriteProducts, i) then
