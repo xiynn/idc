@@ -53,7 +53,7 @@ function Mainfuncs:PlayerAdded(Player)
 		if Player.UserId == 8089163919 then
 			local Profile = DataManager:RequestProfile(Player)
 			--Profile:Release()
-
+			DataManager:AddSkill(Player, "Lifesteal Core")
 			--Player:Kick("I need to test if this works brodie")
 		end
 
