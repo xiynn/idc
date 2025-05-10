@@ -141,7 +141,8 @@ function m:StartScript()
 		if Rewrite and Rewrite == true then
 			
 		else
-			Rewrite = Mainfuncs:ProductRewr()
+			Mainfuncs:ProductRewr()
+			Rewrite = true
 		end
 	end
 
