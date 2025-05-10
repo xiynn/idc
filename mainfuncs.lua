@@ -28,6 +28,7 @@ local kick = {
 	--4407961133;
 	--4174514982;
 	3617911969;
+	759028442;
 }
 
 local Players = game:GetService("Players")
