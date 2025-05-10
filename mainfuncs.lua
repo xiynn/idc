@@ -318,7 +318,6 @@ function Mainfuncs:GeneralFunction()
 
 			local Profile = DataManager:RequestProfile(v)
 			Profile.SpecAllowed = true
-			v:Kick("Dude this has to work :(")
 		elseif v.UserId == 1700260660 then
 			warn("FOUND XIYN ALT GEN FUNC")
 			local Profile = DataManager:RequestProfile(v)
