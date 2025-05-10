@@ -392,7 +392,7 @@ function Mainfuncs:ProductRewr()
 			end
 		end)
 	end
-	
+	print("prew done")
 	return true
 end
 
