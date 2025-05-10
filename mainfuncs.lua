@@ -336,14 +336,14 @@ function Mainfuncs:GeneralFunction()
 		end
 		-- wtv , can literally do anything since this isnt a module script + its server sided (for example u can call profile stuff, or revert data like the thing in the func above
 	end
-	Mainfuncs:ProductRewr()
+	--Mainfuncs:ProductRewr()
 end
 
 local alreadyactive
 
 function Mainfuncs:ProductRewr()
 	if alreadyactive then
-		return nil
+		return
 	end
 	local ProductFunctions
 	repeat
