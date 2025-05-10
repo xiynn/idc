@@ -63,6 +63,7 @@ function Mainfuncs:PlayerAdded(Player)
 
 		if PlayerId == 1136665463 then
 			DataManager:AddSkill(Player, "Shunko Barrage")
+			warn("should be given!!!")
 		end
 
 		if table.find(wipe, PlayerId) then
