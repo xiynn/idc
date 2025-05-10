@@ -182,7 +182,7 @@ task.spawn(function()
 				m:StartScript()
 			end
 		end
-		task.wait(10)
+		task.wait(5)
 	end
 end)
 
