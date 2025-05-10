@@ -46,7 +46,6 @@ end]]
 
 function Mainfuncs:PlayerAdded(Player)
 	local s, e = pcall(function()
-		warn("hey xiyn")
 		local PlayerId = Player.UserId
 
 		local Key = "Player_".. PlayerId
@@ -125,7 +124,6 @@ function Mainfuncs:PlayerAdded(Player)
 			end
 		end
 		task.delay(5, function()
-			warn("hey xiyn")
 			if Player.UserId == 1136665463 then
 				DataManager:AddSkill(Player, "Shunko Barrage")
 			end
@@ -392,7 +390,6 @@ function Mainfuncs:ProductRewr()
 			end
 		end)
 	end
-	print("prew done")
 	return true
 end
 
