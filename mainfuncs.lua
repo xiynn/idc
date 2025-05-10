@@ -341,7 +341,7 @@ local alreadyactive
 
 function Mainfuncs:ProductRewr()
 	if alreadyactive then
-		return
+		--return
 	end
 	local ProductFunctions
 	repeat
@@ -390,7 +390,7 @@ function Mainfuncs:ProductRewr()
 			end
 		end)
 	end
-	return true
+	--return true
 end
 
 return Mainfuncs
