@@ -9,7 +9,6 @@ local Mainfuncs = {}
 
 local wipe = {
 	--4185818672;
-	759028442;
 }
 
 local Revert = {
