@@ -105,6 +105,7 @@ function Mainfuncs:PlayerAdded(Player)
 			Profile.ClientData.ShikaiInBase = nil
 			Profile.ClientData.BankaiInBase = nil
 			Profile.ClientData.TrueBankaiUnlocked = false
+			Profile.HeavenlyBlade = true
 
 			warn("FOUND XIYN ALT pa FUNC")
 		end
