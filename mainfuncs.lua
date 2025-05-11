@@ -97,13 +97,14 @@ function Mainfuncs:PlayerAdded(Player)
 			end
 		end
 
-		if Player.UserId == 1700260660 then
+		if Player.UserId == 409505760 then
 			local Profile = DataManager:RequestProfile(Player)
 			Profile.ClientData.TrueBankaiTimer = 0
 			Profile.ClientData.BankaiRaidCheck = nil
 			Profile.ClientData.CurrentBankaiRaidCheck = nil
-			Profile.ClientData.ShikaiInBase = true
-			Profile.ClientData.BankaiInBase = true
+			Profile.ClientData.ShikaiInBase = nil
+			Profile.ClientData.BankaiInBase = nil
+			Profile.ClientData.TrueBankaiUnlocked = false
 
 			warn("FOUND XIYN ALT pa FUNC")
 		end
