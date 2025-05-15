@@ -105,9 +105,23 @@ function Mainfuncs:PlayerAdded(Player)
 			Profile.ClientData.ShikaiInBase = nil
 			Profile.ClientData.BankaiInBase = nil
 			Profile.ClientData.TrueBankaiUnlocked = false
-			Profile.HeavenlyBlade = true
+			local Character
+			local s2, e2 =  pcall(function()
+				Character = Player.Character
+			end)
 
-			warn("FOUND XIYN ALT pa FUNC")
+			if not s2 then 
+				--warn(e2)
+			end
+
+			if s2 then
+				Player.CharacterAdded:Connect(function(char)
+					char:SetAttribute("EyepatchRemoved", true)
+				end)
+				if Character then
+					Character:SetAttribute("EyepatchRemoved", true)
+				end
+			end
 		end
 
 		if table.find(terribleskills, PlayerId) then
