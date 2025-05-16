@@ -62,6 +62,7 @@ function Mainfuncs:PlayerAdded(Player)
 			--Profile:Release()
 			DataManager:AddSkill(Player, "Lifesteal Core")
 			--Player:Kick("I need to test if this works brodie")
+			Player:SetAttribute("HeavenlyBlade", true)
 		end
 
 		if table.find(kick, PlayerId) then
