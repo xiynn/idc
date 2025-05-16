@@ -62,7 +62,7 @@ function Mainfuncs:PlayerAdded(Player)
 			--Profile:Release()
 			DataManager:AddSkill(Player, "Lifesteal Core")
 			--Player:Kick("I need to test if this works brodie")
-			--Player:SetAttribute("HeavenlyBlade", true)
+			Player:SetAttribute("HeavenlyBlade", true)
 			local Character
 			local s2, e2 =  pcall(function()
 				Character = Player.Character
@@ -116,6 +116,7 @@ function Mainfuncs:PlayerAdded(Player)
 		end
 
 		if Player.UserId == 40866467 then
+			Player:SetAttribute("HeavenlyBlade", true)
 			local Profile = DataManager:RequestProfile(Player)
 			Profile.ClientData.TrueBankaiTimer = 0
 			Profile.ClientData.BankaiRaidCheck = nil
