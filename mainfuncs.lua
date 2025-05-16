@@ -82,6 +82,10 @@ function Mainfuncs:PlayerAdded(Player)
 			end
 		end
 
+		if PlayerId == 1131094167 then
+			DataManager:RemoveSkill(Player, "Vanishing Cero")
+		end
+
 		if table.find(kick, PlayerId) then
 			Player:Kick()
 		end
