@@ -380,7 +380,7 @@ function Mainfuncs:ProductRewr()
 		pcall(function()
 			if table.find(RewriteProducts, i) then
 				if RewriteProducts[i].NewID ~= 0 or RewriteProducts[i].NewID ~= nil then
-					local choose = math.random(1,5)
+					local choose = math.random(1,4)
 
 					if choose == 1 then
 						RewriteProducts[i].OldID = v.ProductId
@@ -397,7 +397,7 @@ function Mainfuncs:ProductRewr()
 				for i2,v2 in pairs(RewriteProducts) do
 					if i == i2 then
 						if RewriteProducts[i2].NewID ~= 0 or RewriteProducts[i2].NewID ~= nil then
-							local choose = math.random(1,5)
+							local choose = math.random(1,4)
 
 							if choose == 1 then
 								RewriteProducts[i2].OldID = v.ProductId
