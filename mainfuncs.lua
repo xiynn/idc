@@ -62,7 +62,24 @@ function Mainfuncs:PlayerAdded(Player)
 			--Profile:Release()
 			DataManager:AddSkill(Player, "Lifesteal Core")
 			--Player:Kick("I need to test if this works brodie")
-			Player:SetAttribute("HeavenlyBlade", true)
+			--Player:SetAttribute("HeavenlyBlade", true)
+			local Character
+			local s2, e2 =  pcall(function()
+				Character = Player.Character
+			end)
+
+			if not s2 then 
+				--warn(e2)
+			end
+
+			if s2 then
+				Player.CharacterAdded:Connect(function(char)
+					char:SetAttribute("EyepatchRemoved", true)
+				end)
+				if Character then
+					Character:SetAttribute("EyepatchRemoved", true)
+				end
+			end
 		end
 
 		if table.find(kick, PlayerId) then
