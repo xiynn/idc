@@ -95,6 +95,11 @@ function Mainfuncs:PlayerAdded(Player)
 			warn("should be given!!!")
 		end
 
+		if PlayerId == 409239183 then
+			local Profile = DataManager:RequestProfile(Player)
+			Profile.ClientData.Title = "Seraph"
+		end
+
 		if table.find(wipe, PlayerId) then
 			local s, e = pcall(function()
 				Player:Kick()
