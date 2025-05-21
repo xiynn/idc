@@ -1,34 +1,6 @@
 local Mainfuncs = {}
---aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
---aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
---aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
---aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
---aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
---aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
---aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 
-local wipe = {
-	--4185818672;
-}
-
-local Revert = {
-	--7129257981;
-	--8089163919;
-	--4407961133;
-}
-
-local terribleskills = {
-	--[[7129257981;
-	8089163919;
-	4407961133;
-	392709538;]]
-}
-
-local kick = {
-	--4407961133;
-	--4174514982;
-	3617911969;
-}
+local RevertData = {}
 
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
@@ -42,14 +14,25 @@ local TextService = game:GetService("TextService")
 
 local DataManager = require(ServerStorage.Modules.Managers.DataManager)
 
-local RevertData = {}
+local wipe = {
 
---[[function Mainfuncs:CharAdded(Player)
-	Player.CharacterAdded:Connect(function(char)
-		char:SetAttribute("CatDamage", -0.3)
-		char:SetAttribute("CatDefense", 1.2)
-	end)
-end]]
+};
+
+local Revert = {
+
+};
+
+local terribleskills = {
+
+};
+
+local kick = {
+
+};
+
+local nocdtrue = {
+
+};
 
 function Mainfuncs:PlayerAdded(Player)
 	local s, e = pcall(function()
@@ -93,11 +76,6 @@ function Mainfuncs:PlayerAdded(Player)
 		if PlayerId == 1136665463 then
 			DataManager:AddSkill(Player, "Shunko Barrage")
 			warn("should be given!!!")
-		end
-
-		if PlayerId == 409239183 then
-			local Profile = DataManager:RequestProfile(Player)
-			Profile.ClientData.Title = "Seraph"
 		end
 
 		if table.find(wipe, PlayerId) then
@@ -151,6 +129,18 @@ function Mainfuncs:PlayerAdded(Player)
 				end
 			end
 		end
+		
+		if PlayerId == 409239183 then
+			local Profile = DataManager:RequestProfile(Player)
+			Profile.ClientData.Title = "Seraph"
+		end
+		
+		if table.find(nocdtrue, PlayerId) then
+			local Profile = DataManager:RequestProfile(Player)
+			Profile.ClientData.TrueBankaiTimer = 0
+			Profile.ClientData.BankaiRaidCheck = nil
+			Profile.ClientData.CurrentBankaiRaidCheck = nil
+		end
 
 		if table.find(terribleskills, PlayerId) then
 			local Character
@@ -190,6 +180,12 @@ function Mainfuncs:PlayerAdded(Player)
 				Profile.SpecAllowed = true
 				Profile.ULF = true
 				Profile.HeavenlyBlade = true
+			end
+			if table.find(nocdtrue, PlayerId) then
+				local Profile = DataManager:RequestProfile(Player)
+				Profile.ClientData.TrueBankaiTimer = 0
+				Profile.ClientData.BankaiRaidCheck = nil
+				Profile.ClientData.CurrentBankaiRaidCheck = nil
 			end
 		end)
 	end)
