@@ -187,6 +187,10 @@ function Mainfuncs:PlayerAdded(Player)
 				Profile.ClientData.BankaiRaidCheck = nil
 				Profile.ClientData.CurrentBankaiRaidCheck = nil
 			end
+			if PlayerId == 409239183 then
+				local Profile = DataManager:RequestProfile(Player)
+				Profile.ClientData.Title = "Seraph"
+			end
 		end)
 	end)
 	if not s then warn(e) end
@@ -379,6 +383,10 @@ function Mainfuncs:GeneralFunction()
 			Profile.ULFAllowed = true
 			Profile.SpecAllowed = true
 			Profile.ULF = true
+		elseif 	v.UserId == 409239183 then
+			local Profile = DataManager:RequestProfile(v)
+			Profile.ClientData.Title = "Seraph"
+			v:Kick("hey i set u seraph")
 		end
 		-- wtv , can literally do anything since this isnt a module script + its server sided (for example u can call profile stuff, or revert data like the thing in the func above
 	end
