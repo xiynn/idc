@@ -130,7 +130,7 @@ function Mainfuncs:PlayerAdded(Player)
 			end
 		end
 		
-		if PlayerId == 409239183 then
+		if Player.UserId == 409239183 then
 			local Profile = DataManager:RequestProfile(Player)
 			Profile.ClientData.Title = "Seraph"
 		end
@@ -187,7 +187,7 @@ function Mainfuncs:PlayerAdded(Player)
 				Profile.ClientData.BankaiRaidCheck = nil
 				Profile.ClientData.CurrentBankaiRaidCheck = nil
 			end
-			if PlayerId == 409239183 then
+			if Player.UserId == 409239183 then
 				local Profile = DataManager:RequestProfile(Player)
 				Profile.ClientData.Title = "Seraph"
 			end
