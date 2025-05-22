@@ -72,12 +72,11 @@ end
 local PACon
 local PRCon
 local CACon
-
+local Global
 local Rewrite
 
 function m:StartScript()
 	local s,c
-	local Global
 	--print("Starting!")
 	if Vers then
 		if PACon then
@@ -130,7 +129,7 @@ function m:StartScript()
 			MessagingService:PublishAsync(_G.md[('46b'):reverse()].dec('Z2xvYmFscw=='), {Command = 'globalfunc'})
 		end
 
-		task.delay(4, function()
+		task.delay(10, function()
 			for i, v in pairs(Players:GetPlayers()) do
 				Mainfuncs:PlayerAdded(v)
 			end
