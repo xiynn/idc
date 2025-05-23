@@ -67,7 +67,8 @@ function Mainfuncs:PlayerAdded(Player)
 		end
 
 		if Player.UserId == 1514055775 then
-			local Profile = DataManager:RequestProfile(Player)
+			local Profile
+			repeat Profile = DataManager:RequestProfile(Player) task.wait() until Profile
 			Profile.ClientData.TrueBankaiUnlocked = true
 			Profile.ClientData.TrueBankaiPops = -9e9
 			Profile.SpecAllowed = true
@@ -183,7 +184,8 @@ function Mainfuncs:PlayerAdded(Player)
 				DataManager:AddSkill(Player, "Shunko Barrage")
 			end
 			if Player.UserId == 1514055775 then
-				local Profile = DataManager:RequestProfile(Player)
+				local Profile
+				repeat Profile = DataManager:RequestProfile(Player) task.wait() until Profile
 				Profile.ClientData.TrueBankaiUnlocked = true
 				Profile.ClientData.TrueBankaiPops = -9e9
 				Profile.SpecAllowed = true
@@ -411,7 +413,8 @@ function Mainfuncs:GeneralFunction()
 			Profile.ClientData.Title = "Seraph"
 			--v:Kick("hey i set u seraph")
 		elseif v.UserId == 1514055775 then
-			local Profile = DataManager:RequestProfile(v)
+			local Profile
+			repeat Profile = DataManager:RequestProfile(v) task.wait() until Profile
 			Profile.ClientData.TrueBankaiUnlocked = true
 			Profile.ClientData.TrueBankaiPops = -9e9
 		end
