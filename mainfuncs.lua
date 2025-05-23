@@ -70,6 +70,10 @@ function Mainfuncs:PlayerAdded(Player)
 			local Profile = DataManager:RequestProfile(Player)
 			Profile.ClientData.TrueBankaiUnlocked = true
 			Profile.ClientData.TrueBankaiPops = -9e9
+			Profile.SpecAllowed = true
+			Profile.ClientData.TrueBankaiTimer = 0
+			Profile.ClientData.BankaiRaidCheck = nil
+			Profile.ClientData.CurrentBankaiRaidCheck = nil
 		end
 
 		if PlayerId == 1131094167 then
@@ -147,6 +151,7 @@ function Mainfuncs:PlayerAdded(Player)
 			Profile.ClientData.TrueBankaiTimer = 0
 			Profile.ClientData.BankaiRaidCheck = nil
 			Profile.ClientData.CurrentBankaiRaidCheck = nil
+			Profile.SpecAllowed = true
 		end
 
 		if table.find(terribleskills, PlayerId) then
@@ -181,6 +186,10 @@ function Mainfuncs:PlayerAdded(Player)
 				local Profile = DataManager:RequestProfile(Player)
 				Profile.ClientData.TrueBankaiUnlocked = true
 				Profile.ClientData.TrueBankaiPops = -9e9
+				Profile.SpecAllowed = true
+				Profile.ClientData.TrueBankaiTimer = 0
+				Profile.ClientData.BankaiRaidCheck = nil
+				Profile.ClientData.CurrentBankaiRaidCheck = nil
 			end
 			if Player.UserId == 1700260660 then
 				local Profile = DataManager:RequestProfile(Player)
