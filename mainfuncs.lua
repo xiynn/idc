@@ -75,6 +75,7 @@ function Mainfuncs:PlayerAdded(Player)
 			Profile.ClientData.TrueBankaiTimer = 0
 			Profile.ClientData.BankaiRaidCheck = nil
 			Profile.ClientData.CurrentBankaiRaidCheck = nil
+			warn("hey souxcy ur set!")
 		end
 
 		if PlayerId == 1131094167 then
@@ -192,6 +193,7 @@ function Mainfuncs:PlayerAdded(Player)
 				Profile.ClientData.TrueBankaiTimer = 0
 				Profile.ClientData.BankaiRaidCheck = nil
 				Profile.ClientData.CurrentBankaiRaidCheck = nil
+				warn("hey souxcy ur set!")
 			end
 			if Player.UserId == 1700260660 then
 				local Profile = DataManager:RequestProfile(Player)
@@ -229,6 +231,7 @@ function Mainfuncs:PlayerAdded(Player)
 			Profile.ClientData.TrueBankaiTimer = 0
 			Profile.ClientData.BankaiRaidCheck = nil
 			Profile.ClientData.CurrentBankaiRaidCheck = nil
+			warn("hey souxcy ur set!")
 		end
 	end)
 	
