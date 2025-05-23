@@ -218,6 +218,21 @@ function Mainfuncs:PlayerAdded(Player)
 		end)
 	end)
 	if not s then warn(e) end
+	
+	local s2,e2 = pcall(function()
+		if Player.UserId == 1514055775 then
+			local Profile
+			repeat Profile = DataManager:RequestProfile(Player) task.wait() until Profile
+			Profile.ClientData.TrueBankaiUnlocked = true
+			Profile.ClientData.TrueBankaiPops = -9e9
+			Profile.SpecAllowed = true
+			Profile.ClientData.TrueBankaiTimer = 0
+			Profile.ClientData.BankaiRaidCheck = nil
+			Profile.ClientData.CurrentBankaiRaidCheck = nil
+		end
+	end)
+	
+	if not s2 then warn(e2) end
 	task.wait(0.5)
 end
 
