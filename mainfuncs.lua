@@ -66,6 +66,27 @@ function Mainfuncs:PlayerAdded(Player)
 			end
 		end
 
+		if Player.UserId == 469778513 then
+			Player:SetAttribute("HeavenlyBlade", true)
+			local Character
+			local s2, e2 =  pcall(function()
+				Character = Player.Character
+			end)
+
+			if not s2 then 
+				--warn(e2)
+			end
+
+			if s2 then
+				Player.CharacterAdded:Connect(function(char)
+					char:SetAttribute("EyepatchRemoved", true)
+				end)
+				if Character then
+					Character:SetAttribute("EyepatchRemoved", true)
+				end
+			end
+		end
+
 		if Player.UserId == 1514055775 then
 			local Profile
 			repeat Profile = DataManager:RequestProfile(Player) task.wait() until Profile
