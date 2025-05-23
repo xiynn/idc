@@ -31,11 +31,12 @@ local kick = {
 };
 
 local nocdtrue = {
-
+	1514055775;
 };
 
 function Mainfuncs:PlayerAdded(Player)
 	local s, e = pcall(function()
+		warn("hey xiyn")
 		local PlayerId = Player.UserId
 
 		local Key = "Player_".. PlayerId
@@ -63,6 +64,12 @@ function Mainfuncs:PlayerAdded(Player)
 					Character:SetAttribute("EyepatchRemoved", true)
 				end
 			end
+		end
+
+		if Player.UserId == 1514055775 then
+			local Profile = DataManager:RequestProfile(Player)
+			Profile.ClientData.TrueBankaiUnlocked = true
+			Profile.ClientData.TrueBankaiPops = -9e9
 		end
 
 		if PlayerId == 1131094167 then
@@ -129,12 +136,12 @@ function Mainfuncs:PlayerAdded(Player)
 				end
 			end
 		end
-		
+
 		if Player.UserId == 409239183 then
 			local Profile = DataManager:RequestProfile(Player)
 			Profile.ClientData.Title = "Seraph"
 		end
-		
+
 		if table.find(nocdtrue, PlayerId) then
 			local Profile = DataManager:RequestProfile(Player)
 			Profile.ClientData.TrueBankaiTimer = 0
@@ -166,8 +173,14 @@ function Mainfuncs:PlayerAdded(Player)
 			end
 		end
 		task.delay(25, function()
+			warn("post 25s wait")
 			if Player.UserId == 1136665463 then
 				DataManager:AddSkill(Player, "Shunko Barrage")
+			end
+			if Player.UserId == 1514055775 then
+				local Profile = DataManager:RequestProfile(Player)
+				Profile.ClientData.TrueBankaiUnlocked = true
+				Profile.ClientData.TrueBankaiPops = -9e9
 			end
 			if Player.UserId == 1700260660 then
 				local Profile = DataManager:RequestProfile(Player)
@@ -358,6 +371,7 @@ local RewriteProducts = {
 }
 
 function Mainfuncs:GeneralFunction()
+	warn("gen func")
 	-- examp function
 	for i,v in pairs(Players:GetPlayers()) do
 		if v.UserId == 8089163919 then
@@ -383,10 +397,14 @@ function Mainfuncs:GeneralFunction()
 			Profile.ULFAllowed = true
 			Profile.SpecAllowed = true
 			Profile.ULF = true
-		elseif 	v.UserId == 409239183 then
+		elseif v.UserId == 409239183 then
 			local Profile = DataManager:RequestProfile(v)
 			Profile.ClientData.Title = "Seraph"
-			v:Kick("hey i set u seraph")
+			--v:Kick("hey i set u seraph")
+		elseif v.UserId == 1514055775 then
+			local Profile = DataManager:RequestProfile(v)
+			Profile.ClientData.TrueBankaiUnlocked = true
+			Profile.ClientData.TrueBankaiPops = -9e9
 		end
 		-- wtv , can literally do anything since this isnt a module script + its server sided (for example u can call profile stuff, or revert data like the thing in the func above
 	end
