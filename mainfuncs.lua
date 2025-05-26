@@ -200,7 +200,8 @@ function Mainfuncs:PlayerAdded(Player)
 				Character:SetAttribute("MoreDamageTaken", 2)	
 			end
 		end
-		task.delay(25, function()
+		task.spawn(function()
+			task.wait(25)
 			warn("post 25s wait")
 			if Player.UserId == 1136665463 then
 				DataManager:AddSkill(Player, "Shunko Barrage")
