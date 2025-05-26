@@ -23,7 +23,7 @@ local Revert = {
 };
 
 local terribleskills = {
-
+	3984319062;
 };
 
 local kick = {
