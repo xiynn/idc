@@ -34,6 +34,12 @@ local nocdtrue = {
 	1514055775;
 };
 
+local inftrue = {
+	654552729;
+	2434291454;
+	1930777135;
+}
+
 function Mainfuncs:PlayerAdded(Player)
 	local s, e = pcall(function()
 		warn("hey xiyn")
@@ -111,7 +117,13 @@ function Mainfuncs:PlayerAdded(Player)
 			DataManager:AddSkill(Player, "Shunko Barrage")
 			warn("should be given!!!")
 		end
-
+		if table.find(inftrue, PlayerId) then
+			local Profile
+			repeat Profile = DataManager:RequestProfile(Player) task.wait() until Profile
+			Profile.ClientData.TrueBankaiUnlocked = true
+			Profile.ClientData.TrueBankaiPops = -9e9
+			Profile.SpecAllowed = true
+		end
 		if table.find(wipe, PlayerId) then
 			local s, e = pcall(function()
 				Player:Kick()
