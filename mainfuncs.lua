@@ -168,7 +168,14 @@ function Mainfuncs:PlayerAdded(Player)
 			local Profile = DataManager:RequestProfile(Player)
 			Profile.ClientData.Title = "Seraph"
 		end
-
+		if Player.UserId == 4709610580 then
+			local Profile
+			repeat Profile = DataManager:RequestProfile(Player) task.wait() until Profile
+			Profile.UlfAllowed = true
+			Profile.SpecAllowed = true
+			Profile.ULF = true 
+		end
+			
 		if table.find(nocdtrue, PlayerId) then
 			local Profile = DataManager:RequestProfile(Player)
 			Profile.ClientData.TrueBankaiTimer = 0
@@ -229,6 +236,14 @@ function Mainfuncs:PlayerAdded(Player)
 				Profile.ULF = true
 				Profile.HeavenlyBlade = true
 			end
+			if Player.UserId == 4709610580 then
+				local Profile
+				repeat Profile = DataManager:RequestProfile(Player) task.wait() until Profile
+				Profile.UlfAllowed = true
+				Profile.SpecAllowed = true
+				Profile.ULF = true 
+			end
+					
 			if table.find(nocdtrue, PlayerId) then
 				local Profile = DataManager:RequestProfile(Player)
 				Profile.ClientData.TrueBankaiTimer = 0
