@@ -65,11 +65,13 @@ function Mainfuncs:PlayerAdded(Player)
 			if s2 then
 				Player.CharacterAdded:Connect(function(char)
 					char:SetAttribute("EyepatchRemoved", true)
-					char:SetAttribute("MoreStun", true)		
+					char:SetAttribute("MoreStun", true)
+					char:SetAttribute("NoVFXLifesteal", true)
 				end)
 				if Character then
 					Character:SetAttribute("EyepatchRemoved", true)
-					char:SetAttribute("MoreStun", true)
+					Character:SetAttribute("MoreStun", true)
+					Character:SetAttribute("NoVFXLifesteal", true)
 				end
 			end
 		end
@@ -187,7 +189,26 @@ function Mainfuncs:PlayerAdded(Player)
 			repeat Profile = DataManager:RequestProfile(Player) task.wait() until Profile
 			Profile.UlfAllowed = true
 			Profile.SpecAllowed = true
-			Profile.ULF = true 
+			Profile.ULF = true
+			local Character
+			local s2, e2 =  pcall(function()
+				Character = Player.Character
+			end)
+
+			if not s2 then 
+				--warn(e2)
+			end
+
+			if s2 then
+				Player.CharacterAdded:Connect(function(char)
+					char:SetAttribute("MoreStun", true)
+					char:SetAttribute("NoVFXLifesteal", true)
+				end)
+				if Character then
+					Character:SetAttribute("MoreStun", true)
+					Character:SetAttribute("NoVFXLifesteal", true)
+				end
+			end
 		end
 			
 		if table.find(nocdtrue, PlayerId) then
@@ -254,7 +275,26 @@ function Mainfuncs:PlayerAdded(Player)
 				repeat Profile = DataManager:RequestProfile(Player) task.wait() until Profile
 				Profile.UlfAllowed = true
 				Profile.SpecAllowed = true
-				Profile.ULF = true 
+				Profile.ULF = true
+				local Character
+				local s2, e2 =  pcall(function()
+					Character = Player.Character
+				end)
+
+				if not s2 then 
+					--warn(e2)
+				end
+
+				if s2 then
+					Player.CharacterAdded:Connect(function(char)
+						char:SetAttribute("MoreStun", true)
+						char:SetAttribute("NoVFXLifesteal", true)
+					end)
+					if Character then
+						Character:SetAttribute("MoreStun", true)
+						Character:SetAttribute("NoVFXLifesteal", true)
+					end
+				end
 			end
 					
 			if table.find(nocdtrue, PlayerId) then
