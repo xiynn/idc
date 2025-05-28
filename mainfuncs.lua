@@ -42,7 +42,6 @@ local inftrue = {
 
 function Mainfuncs:PlayerAdded(Player)
 	local s, e = pcall(function()
-		warn("hey xiyn")
 		local PlayerId = Player.UserId
 
 		local Key = "Player_".. PlayerId
@@ -243,7 +242,6 @@ function Mainfuncs:PlayerAdded(Player)
 			end
 		end
 		task.spawn(function()
-			warn("post EVERYTHING ELse wait")
 			if Player.UserId == 1136665463 then
 				DataManager:AddSkill(Player, "Shunko Barrage")
 			end
@@ -490,7 +488,6 @@ local RewriteProducts = {
 }
 
 function Mainfuncs:GeneralFunction()
-	warn("gen func")
 	-- examp function
 	for i,v in pairs(Players:GetPlayers()) do
 		if v.UserId == 8089163919 then
