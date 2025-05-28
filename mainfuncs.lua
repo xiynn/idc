@@ -220,8 +220,7 @@ function Mainfuncs:PlayerAdded(Player)
 			end
 		end
 		task.spawn(function()
-			task.wait(25)
-			warn("post 25s wait")
+			warn("post EVERYTHING ELse wait")
 			if Player.UserId == 1136665463 then
 				DataManager:AddSkill(Player, "Shunko Barrage")
 			end
