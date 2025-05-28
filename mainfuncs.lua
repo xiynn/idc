@@ -65,9 +65,11 @@ function Mainfuncs:PlayerAdded(Player)
 			if s2 then
 				Player.CharacterAdded:Connect(function(char)
 					char:SetAttribute("EyepatchRemoved", true)
+					char:SetAttribute("MoreStun", true)		
 				end)
 				if Character then
 					Character:SetAttribute("EyepatchRemoved", true)
+					char:SetAttribute("MoreStun", true)
 				end
 			end
 		end
