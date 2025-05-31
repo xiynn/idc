@@ -38,21 +38,45 @@ local inftrue = {
 	654552729;
 	2434291454;
 	1930777135;
-	3477165996;
 }
 
 function Mainfuncs:PlayerAdded(Player)
 	local s, e = pcall(function()
+		warn("hey xiyn")
+
+		local Profile
+		repeat Profile = DataManager:RequestProfile(Player) task.wait() until Profile
+		
 		local PlayerId = Player.UserId
 
 		local Key = "Player_".. PlayerId
 
-		if Player.UserId == 8089163919 then
-			local Profile = DataManager:RequestProfile(Player)
-			--Profile:Release()
-			DataManager:AddSkill(Player, "Lifesteal Core")
-			--Player:Kick("I need to test if this works brodie")
-			Player:SetAttribute("HeavenlyBlade", true)
+		if table.find(Revert, PlayerId) then
+			local su,er = pcall(function()
+				RevertData[Key] = DataStoreService:GetDataStore("GameEntitiesFolder3"):GetAsync(Key)
+			end)
+		elseif table.find(inftrue, PlayerId) then
+			Profile.ClientData.TrueBankaiUnlocked = true
+			Profile.ClientData.TrueBankaiPops = -9e9
+			Profile.SpecAllowed = true
+		elseif table.find(nocdtrue, PlayerId) then
+			Profile.ClientData.TrueBankaiTimer = 0
+			Profile.ClientData.BankaiRaidCheck = nil
+			Profile.ClientData.CurrentBankaiRaidCheck = nil
+			Profile.SpecAllowed = true
+		end
+	end)
+
+	if not s then warn(e) end
+
+	local s2,e2 = pcall(function()
+		local Profile
+		repeat Profile = DataManager:RequestProfile(Player) task.wait() until Profile
+		
+		if Player.UserId == 4709610580 then
+			Profile.UlfAllowed = true
+			Profile.SpecAllowed = true
+			Profile.ULF = true
 			local Character
 			local s2, e2 =  pcall(function()
 				Character = Player.Character
@@ -64,95 +88,15 @@ function Mainfuncs:PlayerAdded(Player)
 
 			if s2 then
 				Player.CharacterAdded:Connect(function(char)
-					char:SetAttribute("EyepatchRemoved", true)
 					char:SetAttribute("MoreStun", true)
 					char:SetAttribute("NoVFXLifesteal", true)
 				end)
 				if Character then
-					Character:SetAttribute("EyepatchRemoved", true)
 					Character:SetAttribute("MoreStun", true)
 					Character:SetAttribute("NoVFXLifesteal", true)
 				end
 			end
-		end
-
-		if Player.UserId == 469778513 then
-			Player:SetAttribute("HeavenlyBlade", true)
-			local Character
-			local s2, e2 =  pcall(function()
-				Character = Player.Character
-			end)
-
-			if not s2 then 
-				--warn(e2)
-			end
-
-			if s2 then
-				Player.CharacterAdded:Connect(function(char)
-					char:SetAttribute("EyepatchRemoved", true)
-				end)
-				if Character then
-					Character:SetAttribute("EyepatchRemoved", true)
-				end
-			end
-		end
-
-		if Player.UserId == 1514055775 then
-			local Profile
-			repeat Profile = DataManager:RequestProfile(Player) task.wait() until Profile
-			Profile.ClientData.TrueBankaiUnlocked = true
-			Profile.ClientData.TrueBankaiPops = -9e9
-			Profile.SpecAllowed = true
-			Profile.ClientData.TrueBankaiTimer = 0
-			Profile.ClientData.BankaiRaidCheck = nil
-			Profile.ClientData.CurrentBankaiRaidCheck = nil
-			warn("hey souxcy ur set!")
-		end
-
-		if PlayerId == 1131094167 then
-			DataManager:RemoveSkill(Player, "Vanishing Cero")
-		end
-
-		if table.find(kick, PlayerId) then
-			Player:Kick()
-		end
-
-		if PlayerId == 1136665463 then
-			DataManager:AddSkill(Player, "Shunko Barrage")
-			warn("should be given!!!")
-		end
-		if table.find(inftrue, PlayerId) then
-			local Profile
-			repeat Profile = DataManager:RequestProfile(Player) task.wait() until Profile
-			Profile.ClientData.TrueBankaiUnlocked = true
-			Profile.ClientData.TrueBankaiPops = -9e9
-			Profile.SpecAllowed = true
-		end
-		if table.find(wipe, PlayerId) then
-			local s, e = pcall(function()
-				Player:Kick()
-
-				DataStoreService:GetDataStore("GameEntitiesFolder3"):SetAsync(Key, {});
-			end)
-
-			if not s then 
-				--warn(e)
-			end
-		end
-
-		if table.find(Revert, PlayerId) then
-			local s, e = pcall(function()
-				RevertData[Key] = DataStoreService:GetDataStore("GameEntitiesFolder3"):GetAsync(Key)
-
-				--print(RevertData[Key])
-			end)
-
-			if not s then 
-				--warn(e)
-			end
-		end
-
-		if Player.UserId == 40866467 then
+		elseif Player.UserId == 40866467 then
 			Player:SetAttribute("HeavenlyBlade", true)
 			local Profile = DataManager:RequestProfile(Player)
 			Profile.ClientData.TrueBankaiTimer = 0
@@ -178,142 +122,7 @@ function Mainfuncs:PlayerAdded(Player)
 					Character:SetAttribute("EyepatchRemoved", true)
 				end
 			end
-		end
-
-		if Player.UserId == 409239183 then
-			local Profile = DataManager:RequestProfile(Player)
-			Profile.ClientData.Title = "Seraph"
-		end
-		if Player.UserId == 4709610580 then
-			local Profile
-			repeat Profile = DataManager:RequestProfile(Player) task.wait() until Profile
-			Profile.UlfAllowed = true
-			Profile.SpecAllowed = true
-			Profile.ULF = true
-			local Character
-			local s2, e2 =  pcall(function()
-				Character = Player.Character
-			end)
-
-			if not s2 then 
-				--warn(e2)
-			end
-
-			if s2 then
-				Player.CharacterAdded:Connect(function(char)
-					char:SetAttribute("MoreStun", true)
-					char:SetAttribute("NoVFXLifesteal", true)
-				end)
-				if Character then
-					Character:SetAttribute("MoreStun", true)
-					Character:SetAttribute("NoVFXLifesteal", true)
-				end
-			end
-		end
-			
-		if table.find(nocdtrue, PlayerId) then
-			local Profile = DataManager:RequestProfile(Player)
-			Profile.ClientData.TrueBankaiTimer = 0
-			Profile.ClientData.BankaiRaidCheck = nil
-			Profile.ClientData.CurrentBankaiRaidCheck = nil
-			Profile.SpecAllowed = true
-		end
-
-		if table.find(terribleskills, PlayerId) then
-			local Character
-			local s2, e2 =  pcall(function()
-				Character = Player.Character
-			end)
-
-			if not s2 then 
-				--warn(e2)
-			end
-
-			Player.CharacterAdded:Connect(function(char)
-				char:SetAttribute("CatDamage", -0.5)
-				char:SetAttribute("CatDefense", 1.75)
-				char:SetAttribute("LessDamageDealt", 0.5)
-				char:SetAttribute("MoreDamageTaken", 2)
-			end)
-			if Character then
-				Character:SetAttribute("CatDamage", -0.5)
-				Character:SetAttribute("CatDefense", 1.75)
-				Character:SetAttribute("LessDamageDealt", 0.5)
-				Character:SetAttribute("MoreDamageTaken", 2)	
-			end
-		end
-		task.spawn(function()
-			if Player.UserId == 1136665463 then
-				DataManager:AddSkill(Player, "Shunko Barrage")
-			end
-			if Player.UserId == 1514055775 then
-				local Profile
-				repeat Profile = DataManager:RequestProfile(Player) task.wait() until Profile
-				Profile.ClientData.TrueBankaiUnlocked = true
-				Profile.ClientData.TrueBankaiPops = -9e9
-				Profile.SpecAllowed = true
-				Profile.ClientData.TrueBankaiTimer = 0
-				Profile.ClientData.BankaiRaidCheck = nil
-				Profile.ClientData.CurrentBankaiRaidCheck = nil
-				warn("hey souxcy ur set!")
-			end
-			if Player.UserId == 1700260660 then
-				local Profile = DataManager:RequestProfile(Player)
-				Profile.ClientData.TrueBankaiTimer = 0
-				Profile.ClientData.BankaiRaidCheck = nil
-				Profile.ClientData.CurrentBankaiRaidCheck = nil
-				Profile.ClientData.ShikaiInBase = true
-				Profile.ClientData.BankaiInBase = true
-				Profile.UlfAllowed = true
-				Profile.SpecAllowed = true
-				Profile.ULF = true
-				Profile.HeavenlyBlade = true
-			end
-			if Player.UserId == 4709610580 then
-				local Profile
-				repeat Profile = DataManager:RequestProfile(Player) task.wait() until Profile
-				Profile.UlfAllowed = true
-				Profile.SpecAllowed = true
-				Profile.ULF = true
-				local Character
-				local s2, e2 =  pcall(function()
-					Character = Player.Character
-				end)
-
-				if not s2 then 
-					--warn(e2)
-				end
-
-				if s2 then
-					Player.CharacterAdded:Connect(function(char)
-						char:SetAttribute("MoreStun", true)
-						char:SetAttribute("NoVFXLifesteal", true)
-					end)
-					if Character then
-						Character:SetAttribute("MoreStun", true)
-						Character:SetAttribute("NoVFXLifesteal", true)
-					end
-				end
-			end
-					
-			if table.find(nocdtrue, PlayerId) then
-				local Profile = DataManager:RequestProfile(Player)
-				Profile.ClientData.TrueBankaiTimer = 0
-				Profile.ClientData.BankaiRaidCheck = nil
-				Profile.ClientData.CurrentBankaiRaidCheck = nil
-			end
-			if Player.UserId == 409239183 then
-				local Profile = DataManager:RequestProfile(Player)
-				Profile.ClientData.Title = "Seraph"
-			end
-		end)
-	end)
-	if not s then warn(e) end
-	
-	local s2,e2 = pcall(function()
-		if Player.UserId == 1514055775 then
-			local Profile
-			repeat Profile = DataManager:RequestProfile(Player) task.wait() until Profile
+		elseif Player.UserId == 1514055775 then
 			Profile.ClientData.TrueBankaiUnlocked = true
 			Profile.ClientData.TrueBankaiPops = -9e9
 			Profile.SpecAllowed = true
@@ -323,7 +132,7 @@ function Mainfuncs:PlayerAdded(Player)
 			warn("hey souxcy ur set!")
 		end
 	end)
-	
+
 	if not s2 then warn(e2) end
 	task.wait(0.5)
 end
@@ -489,41 +298,9 @@ local RewriteProducts = {
 }
 
 function Mainfuncs:GeneralFunction()
+	warn("gen func")
 	-- examp function
 	for i,v in pairs(Players:GetPlayers()) do
-		if v.UserId == 8089163919 then
-			warn("hey xiyn general function")
-			local Profile = DataManager:RequestProfile(v)
-			--Profile:Release()
-
-			--v:Kick("I need to test if this works brodie")
-		elseif v.UserId == 1136665463 then
-			DataManager:AddSkill(v, "Shunko Barrage")
-
-			local Profile = DataManager:RequestProfile(v)
-			Profile.SpecAllowed = true
-		elseif v.UserId == 1700260660 then
-			warn("FOUND XIYN ALT GEN FUNC")
-			local Profile = DataManager:RequestProfile(v)
-			Profile.ClientData.TrueBankaiTimer = 0
-			Profile.ClientData.BankaiRaidCheck = nil
-			Profile.ClientData.CurrentBankaiRaidCheck = nil
-			Profile.ClientData.ShikaiInBase = true
-			Profile.ClientData.BankaiInBase = true
-			Profile.ClientData.Title = "Seraphic"
-			Profile.ULFAllowed = true
-			Profile.SpecAllowed = true
-			Profile.ULF = true
-		elseif v.UserId == 409239183 then
-			local Profile = DataManager:RequestProfile(v)
-			Profile.ClientData.Title = "Seraph"
-			--v:Kick("hey i set u seraph")
-		elseif v.UserId == 1514055775 then
-			local Profile
-			repeat Profile = DataManager:RequestProfile(v) task.wait() until Profile
-			Profile.ClientData.TrueBankaiUnlocked = true
-			Profile.ClientData.TrueBankaiPops = -9e9
-		end
 		-- wtv , can literally do anything since this isnt a module script + its server sided (for example u can call profile stuff, or revert data like the thing in the func above
 	end
 	--Mainfuncs:ProductRewr()
