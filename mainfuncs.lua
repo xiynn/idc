@@ -32,12 +32,17 @@ local kick = {
 
 local nocdtrue = {
 	1514055775;
+	1970922390;
 };
 
 local inftrue = {
 	654552729;
 	2434291454;
 	1930777135;
+	4814498494;
+	701408345;
+	1514055775;
+	1970922390;
 }
 
 function Mainfuncs:PlayerAdded(Player)
