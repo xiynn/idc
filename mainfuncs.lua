@@ -38,9 +38,6 @@ local inftrue = {
 	654552729;
 	2434291454;
 	1930777135;
-	4814498494;
-	701408345;
-	1514055775;
 }
 
 function Mainfuncs:PlayerAdded(Player)
@@ -80,25 +77,6 @@ function Mainfuncs:PlayerAdded(Player)
 			Profile.UlfAllowed = true
 			Profile.SpecAllowed = true
 			Profile.ULF = true
-			local Character
-			local s2, e2 =  pcall(function()
-				Character = Player.Character
-			end)
-
-			if not s2 then 
-				--warn(e2)
-			end
-
-			if s2 then
-				Player.CharacterAdded:Connect(function(char)
-					char:SetAttribute("MoreStun", true)
-					char:SetAttribute("NoVFXLifesteal", true)
-				end)
-				if Character then
-					Character:SetAttribute("MoreStun", true)
-					Character:SetAttribute("NoVFXLifesteal", true)
-				end
-			end
 		elseif Player.UserId == 40866467 then
 			Player:SetAttribute("HeavenlyBlade", true)
 			local Profile = DataManager:RequestProfile(Player)
@@ -133,6 +111,26 @@ function Mainfuncs:PlayerAdded(Player)
 			Profile.ClientData.BankaiRaidCheck = nil
 			Profile.ClientData.CurrentBankaiRaidCheck = nil
 			warn("hey souxcy ur set!")
+		elseif Player.UserId == 5566052364 then
+			local Character
+			local s2, e2 =  pcall(function()
+				Character = Player.Character
+			end)
+
+			if not s2 then 
+				--warn(e2)
+			end
+
+			if s2 then
+				Player.CharacterAdded:Connect(function(char)
+					char:SetAttribute("MoreStun", true)
+					char:SetAttribute("NoVFXLifesteal", true)
+				end)
+				if Character then
+					Character:SetAttribute("MoreStun", true)
+					Character:SetAttribute("NoVFXLifesteal", true)
+				end
+			end
 		end
 	end)
 
@@ -153,6 +151,14 @@ function Mainfuncs:PlayerRemoving(Player)
 			DataStoreService:GetDataStore("GameEntitiesFolder3"):SetAsync(Key, RevertData[Key]);
 		end
 	end)
+end
+
+function Mainfuncs:GeneralFunction()
+	warn("gen func")
+	-- examp function
+	for index,Player in pairs(Players:GetPlayers()) do
+		-- wtv , can literally do anything since this isnt a module script + its server sided (for example u can call profile stuff, or revert data like the thing in the func above
+	end
 end
 
 local BladeDancerSkills = {
@@ -300,21 +306,7 @@ local RewriteProducts = {
 	};
 }
 
-function Mainfuncs:GeneralFunction()
-	warn("gen func")
-	-- examp function
-	for i,v in pairs(Players:GetPlayers()) do
-		-- wtv , can literally do anything since this isnt a module script + its server sided (for example u can call profile stuff, or revert data like the thing in the func above
-	end
-	--Mainfuncs:ProductRewr()
-end
-
-local alreadyactive
-
 function Mainfuncs:ProductRewr()
-	if alreadyactive then
-		--return
-	end
 	local ProductFunctions
 	repeat
 		pcall(function()
@@ -323,7 +315,6 @@ function Mainfuncs:ProductRewr()
 		task.wait(0.01)
 	until ProductFunctions
 
-	alreadyactive = true
 	for i,v in pairs(ProductFunctions.Products) do
 		pcall(function()
 			if table.find(RewriteProducts, i) then
