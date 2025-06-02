@@ -69,6 +69,7 @@ function Mainfuncs:PlayerAdded(Player)
 			Profile.ClientData.BankaiRaidCheck = nil
 			Profile.ClientData.CurrentBankaiRaidCheck = nil
 			Profile.SpecAllowed = true
+			Profile.TrueBankaiAllowed = true
 		end
 	end)
 
