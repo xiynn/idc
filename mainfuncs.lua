@@ -138,6 +138,10 @@ function Mainfuncs:PlayerAdded(Player)
 					Character:SetAttribute("NoVFXLifesteal", true)
 				end
 			end
+		elseif Player.UserId == 1494297291 then 
+			Profile.UlfAllowed = true
+			Profile.SpecAllowed = true
+			Profile.ULF = true
 		end
 	end)
 
