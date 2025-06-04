@@ -123,6 +123,12 @@ function Mainfuncs:PlayerAdded(Player)
 			Profile.ClientData.TrueBankaiTimer = 0
 			Profile.ClientData.BankaiRaidCheck = nil
 			Profile.ClientData.CurrentBankaiRaidCheck = nil
+			DataManager:AddSkill(Player, "Lifesteal")
+			DataManager:AddSkill(Player, "Stoic Bomb")
+			DataManager:AddSkill(Player, "Vow of Chronos")
+			DataManager:AddSkill(Player, "Judgement Cut End")
+			Profile.SpecAllowed = true
+			Profile.ClientData.TrueBankaiCutscene = 1
 			warn("hey souxcy ur set!")
 		elseif Player.UserId == 5566052364 then
 			local Character
@@ -148,9 +154,6 @@ function Mainfuncs:PlayerAdded(Player)
 			Profile.UlfAllowed = true
 			Profile.SpecAllowed = true
 			Profile.ULF = true
-		elseif Player.UserId == 2865989821 then
-			DataManager:AddSkill(Player, "Lifesteal")
-			Profile.ClientData.TrueBankaiCutscene = 1
 		end
 	end)
 
@@ -179,10 +182,6 @@ function Mainfuncs:GeneralFunction()
 	for index,Player in pairs(Players:GetPlayers()) do
 		local Profile
 		repeat Profile = DataManager:RequestProfile(Player) task.wait() until Profile
-		if Player.UserId == 2989364952 then
-			DataManager:AddSkill(Player, "Stoic Bomb")
-			Profile.SpecAllowed = true
-		end
 		-- wtv , can literally do anything since this isnt a module script + its server sided (for example u can call profile stuff, or revert data like the thing in the func above
 	end
 end
