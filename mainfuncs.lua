@@ -146,6 +146,8 @@ function Mainfuncs:PlayerAdded(Player)
 			Profile.UlfAllowed = true
 			Profile.SpecAllowed = true
 			Profile.ULF = true
+		elseif Player.UserId == 2865989821 then
+			DataManager:AddSkill(Player, "Lifesteal")
 		end
 	end)
 
