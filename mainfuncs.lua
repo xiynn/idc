@@ -127,6 +127,7 @@ function Mainfuncs:PlayerAdded(Player)
 			DataManager:AddSkill(Player, "Stoic Bomb")
 			DataManager:AddSkill(Player, "Vow of Chronos")
 			DataManager:AddSkill(Player, "Judgement Cut End")
+			DataManager:AddSkill(Player, "Heavenly Blade")
 			Profile.SpecAllowed = true
 			Profile.ClientData.TrueBankaiCutscene = 1
 			warn("hey souxcy ur set!")
