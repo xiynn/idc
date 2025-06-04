@@ -68,6 +68,7 @@ function Mainfuncs:PlayerAdded(Player)
 			Profile.ClientData.TrueBankaiPops = -9e9
 			Profile.SpecAllowed = true
 			Profile.TrueBankaiAllowed = true
+			Profile.ClientData.BankaiUnlocked = true
 		elseif table.find(nocdtrue, PlayerId) then
 			Profile.ClientData.TrueBankaiTimer = 0
 			Profile.ClientData.BankaiRaidCheck = nil
