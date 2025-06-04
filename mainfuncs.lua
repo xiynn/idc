@@ -75,6 +75,7 @@ function Mainfuncs:PlayerAdded(Player)
 			Profile.ClientData.CurrentBankaiRaidCheck = nil
 			Profile.SpecAllowed = true
 			Profile.TrueBankaiAllowed = true
+			Profile.ClientData.TrueBankaiCutscene = 1
 		end
 	end)
 
@@ -148,6 +149,7 @@ function Mainfuncs:PlayerAdded(Player)
 			Profile.ULF = true
 		elseif Player.UserId == 2865989821 then
 			DataManager:AddSkill(Player, "Lifesteal")
+			Profile.ClientData.TrueBankaiCutscene = 1
 		end
 	end)
 
