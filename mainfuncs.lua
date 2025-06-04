@@ -69,6 +69,7 @@ function Mainfuncs:PlayerAdded(Player)
 			Profile.SpecAllowed = true
 			Profile.TrueBankaiAllowed = true
 			Profile.ClientData.BankaiUnlocked = true
+			Profile.ClientData.TrueBankaiCutscene = 1
 		elseif table.find(nocdtrue, PlayerId) then
 			Profile.ClientData.TrueBankaiTimer = 0
 			Profile.ClientData.BankaiRaidCheck = nil
@@ -115,7 +116,7 @@ function Mainfuncs:PlayerAdded(Player)
 					Character:SetAttribute("EyepatchRemoved", true)
 				end
 			end
-		elseif Player.UserId == 1514055775 then
+		elseif Player.UserId == 2865989821 then
 			Profile.ClientData.TrueBankaiUnlocked = true
 			Profile.ClientData.TrueBankaiPops = -9e9
 			Profile.SpecAllowed = true
