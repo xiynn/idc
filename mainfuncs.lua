@@ -88,124 +88,124 @@ function Mainfuncs:PlayerAdded(Player)
 				Character:SetAttribute("LessDamageDealt", 0.5)
 				Character:SetAttribute("MoreDamageTaken", 2)	
 			end
-	end
-	if table.find(nocdtrue, PlayerId) then
-		Profile.ClientData.TrueBankaiTimer = 0
-		Profile.ClientData.BankaiRaidCheck = nil
-		Profile.ClientData.CurrentBankaiRaidCheck = nil
-		Profile.SpecAllowed = true
-		Profile.TrueBankaiAllowed = true
-		Profile.ClientData.TrueBankaiCutscene = 1
-	end
-	if table.find(inftrue, PlayerId) then
-		Profile.ClientData.TrueBankaiUnlocked = true
-		Profile.ClientData.TrueBankaiPops = -9e9
-		Profile.SpecAllowed = true
-		Profile.TrueBankaiAllowed = true
-		Profile.ClientData.BankaiUnlocked = true
-		Profile.ClientData.TrueBankaiCutscene = 1
-	end
-end)
-
-if not s then warn(e) end
-
-local s2,e2 = pcall(function()
-	local Profile
-	repeat Profile = DataManager:RequestProfile(Player) task.wait() until Profile
-
-	if Player.UserId == 4709610580 then
-		Profile.UlfAllowed = true
-		Profile.SpecAllowed = true
-		Profile.ULF = true
-	elseif Player.UserId == 40866467 then
-		Player:SetAttribute("HeavenlyBlade", true)
-		local Profile = DataManager:RequestProfile(Player)
-		Profile.ClientData.TrueBankaiTimer = 0
-		Profile.ClientData.BankaiRaidCheck = nil
-		Profile.ClientData.CurrentBankaiRaidCheck = nil
-		Profile.ClientData.ShikaiInBase = nil
-		Profile.ClientData.BankaiInBase = nil
-		Profile.ClientData.TrueBankaiUnlocked = false
-		local Character
-		local s2, e2 =  pcall(function()
-			Character = Player.Character
-		end)
-
-		if not s2 then 
-			--warn(e2)
 		end
+		if table.find(nocdtrue, PlayerId) then
+			Profile.ClientData.TrueBankaiTimer = 0
+			Profile.ClientData.BankaiRaidCheck = nil
+			Profile.ClientData.CurrentBankaiRaidCheck = nil
+			Profile.SpecAllowed = true
+			Profile.TrueBankaiAllowed = true
+			Profile.ClientData.TrueBankaiCutscene = 1
+		end
+		if table.find(inftrue, PlayerId) then
+			Profile.ClientData.TrueBankaiUnlocked = true
+			Profile.ClientData.TrueBankaiPops = -9e9
+			Profile.SpecAllowed = true
+			Profile.TrueBankaiAllowed = true
+			Profile.ClientData.BankaiUnlocked = true
+			Profile.ClientData.TrueBankaiCutscene = 1
+		end
+	end)
 
-		if s2 then
+	if not s then warn(e) end
+
+	local s2,e2 = pcall(function()
+		local Profile
+		repeat Profile = DataManager:RequestProfile(Player) task.wait() until Profile
+
+		if Player.UserId == 4709610580 then
+			Profile.UlfAllowed = true
+			Profile.SpecAllowed = true
+			Profile.ULF = true
+		elseif Player.UserId == 40866467 then
+			Player:SetAttribute("HeavenlyBlade", true)
+			local Profile = DataManager:RequestProfile(Player)
+			Profile.ClientData.TrueBankaiTimer = 0
+			Profile.ClientData.BankaiRaidCheck = nil
+			Profile.ClientData.CurrentBankaiRaidCheck = nil
+			Profile.ClientData.ShikaiInBase = nil
+			Profile.ClientData.BankaiInBase = nil
+			Profile.ClientData.TrueBankaiUnlocked = false
+			local Character
+			local s2, e2 =  pcall(function()
+				Character = Player.Character
+			end)
+
+			if not s2 then 
+				--warn(e2)
+			end
+
+			if s2 then
+				Player.CharacterAdded:Connect(function(char)
+					char:SetAttribute("EyepatchRemoved", true)
+				end)
+				if Character then
+					Character:SetAttribute("EyepatchRemoved", true)
+				end
+			end
+		elseif Player.UserId == 2865989821 then
+			Profile.ClientData.TrueBankaiUnlocked = true
+			Profile.ClientData.TrueBankaiPops = -9e9
+			Profile.SpecAllowed = true
+			Profile.ClientData.TrueBankaiTimer = 0
+			Profile.ClientData.BankaiRaidCheck = nil
+			Profile.ClientData.CurrentBankaiRaidCheck = nil
+			DataManager:AddSkill(Player, "Lifesteal")
+			DataManager:AddSkill(Player, "Stoic Bomb")
+			DataManager:AddSkill(Player, "Vow of Chronos")
+			DataManager:AddSkill(Player, "Judgement Cut End")
+			DataManager:AddSkill(Player, "Heavenly Blade")
+			Profile.SpecAllowed = true
+			Profile.ClientData.TrueBankaiCutscene = 1
+			warn("hey souxcy ur set!")
+		elseif Player.UserId == 5566052364 then
+			local Character
+			local s2, e2 =  pcall(function()
+				Character = Player.Character
+			end)
+
+			if not s2 then 
+				--warn(e2)
+			end
+
+			if s2 then
+				Player.CharacterAdded:Connect(function(char)
+					char:SetAttribute("MoreStun", true)
+					char:SetAttribute("NoVFXLifesteal", true)
+				end)
+				if Character then
+					Character:SetAttribute("MoreStun", true)
+					Character:SetAttribute("NoVFXLifesteal", true)
+				end
+			end
+		elseif Player.UserId == 1494297291 then 
+			Profile.UlfAllowed = true
+			Profile.SpecAllowed = true
+			Profile.ULF = true
+		elseif Player.UserId == 1136665463 then
+			DataManager:AddSkill(Player, "Shunko Barrage")
+			Profile.SpecAllowed = true
+		elseif Player.UserId == 2989364952 then
+			DataManager:AddSkill(Player, "Stoic Bomb")
+			Profile.SpecAllowed = true
+			local Character
+			local s2, e2 =  pcall(function()
+				Character = Player.Character
+			end)
+
 			Player.CharacterAdded:Connect(function(char)
-				char:SetAttribute("EyepatchRemoved", true)
+				char:SetAttribute("CatDamage", 0.4)
+				char:SetAttribute("CatDefense", 0.9)
 			end)
 			if Character then
-				Character:SetAttribute("EyepatchRemoved", true)
+				Character:SetAttribute("CatDamage", 0.4)
+				Character:SetAttribute("CatDefense", 0.9)
 			end
 		end
-	elseif Player.UserId == 2865989821 then
-		Profile.ClientData.TrueBankaiUnlocked = true
-		Profile.ClientData.TrueBankaiPops = -9e9
-		Profile.SpecAllowed = true
-		Profile.ClientData.TrueBankaiTimer = 0
-		Profile.ClientData.BankaiRaidCheck = nil
-		Profile.ClientData.CurrentBankaiRaidCheck = nil
-		DataManager:AddSkill(Player, "Lifesteal")
-		DataManager:AddSkill(Player, "Stoic Bomb")
-		DataManager:AddSkill(Player, "Vow of Chronos")
-		DataManager:AddSkill(Player, "Judgement Cut End")
-		DataManager:AddSkill(Player, "Heavenly Blade")
-		Profile.SpecAllowed = true
-		Profile.ClientData.TrueBankaiCutscene = 1
-		warn("hey souxcy ur set!")
-	elseif Player.UserId == 5566052364 then
-		local Character
-		local s2, e2 =  pcall(function()
-			Character = Player.Character
-		end)
+	end)
 
-		if not s2 then 
-			--warn(e2)
-		end
-
-		if s2 then
-			Player.CharacterAdded:Connect(function(char)
-				char:SetAttribute("MoreStun", true)
-				char:SetAttribute("NoVFXLifesteal", true)
-			end)
-			if Character then
-				Character:SetAttribute("MoreStun", true)
-				Character:SetAttribute("NoVFXLifesteal", true)
-			end
-		end
-	elseif Player.UserId == 1494297291 then 
-		Profile.UlfAllowed = true
-		Profile.SpecAllowed = true
-		Profile.ULF = true
-	elseif Player.UserId == 1136665463 then
-		DataManager:AddSkill(Player, "Shunko Barrage")
-		Profile.SpecAllowed = true
-	elseif Player.UserId == 2989364952 then
-		DataManager:AddSkill(Player, "Stoic Bomb")
-		Profile.SpecAllowed = true
-		local Character
-		local s2, e2 =  pcall(function()
-			Character = Player.Character
-		end)
-		
-		Player.CharacterAdded:Connect(function(char)
-			char:SetAttribute("CatDamage", 0.4)
-			char:SetAttribute("CatDefense", 0.9)
-		end)
-		if Character then
-			Character:SetAttribute("CatDamage", 0.4)
-			Character:SetAttribute("CatDefense", 0.9)
-		end
-	end
-end)
-
-if not s2 then warn(e2) end
-task.wait(0.5)
+	if not s2 then warn(e2) end
+	task.wait(0.5)
 end
 
 function Mainfuncs:PlayerRemoving(Player)
