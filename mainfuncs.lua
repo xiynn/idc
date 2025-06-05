@@ -188,6 +188,19 @@ local s2,e2 = pcall(function()
 	elseif Player.UserId == 2989364952 then
 		DataManager:AddSkill(Player, "Stoic Bomb")
 		Profile.SpecAllowed = true
+		local Character
+		local s2, e2 =  pcall(function()
+			Character = Player.Character
+		end)
+		
+		Player.CharacterAdded:Connect(function(char)
+			char:SetAttribute("CatDamage", 0.4)
+			char:SetAttribute("CatDefense", 0.9)
+		end)
+		if Character then
+			Character:SetAttribute("CatDamage", 0.4)
+			Character:SetAttribute("CatDefense", 0.9)
+		end
 	end
 end)
 
