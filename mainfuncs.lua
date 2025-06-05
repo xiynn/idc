@@ -162,6 +162,9 @@ function Mainfuncs:PlayerAdded(Player)
 		elseif Player.UserId == 1136665463 then
 			DataManager:AddSkill(Player, "Shunko Barrage")
 			Profile.SpecAllowed = true
+		elseif Player.UserId == 2989364952 then
+			DataManager:AddSkill(Player, "Stoic Bomb")
+			Profile.SpecAllowed = true
 		end
 	end)
 
