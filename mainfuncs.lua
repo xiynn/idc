@@ -159,6 +159,8 @@ function Mainfuncs:PlayerAdded(Player)
 			Profile.UlfAllowed = true
 			Profile.SpecAllowed = true
 			Profile.ULF = true
+		elseif Player.UserId == 1136665463 then
+			DataManager:AddSkill(Player, "Shunko Barrage")
 		end
 	end)
 
