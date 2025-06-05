@@ -47,6 +47,7 @@ local inftrue = {
 	1970922390;
 	2801323709;
 	2865989821;
+	80904029;
 }
 
 function Mainfuncs:PlayerAdded(Player)
