@@ -65,14 +65,16 @@ function Mainfuncs:PlayerAdded(Player)
 			local su,er = pcall(function()
 				RevertData[Key] = DataStoreService:GetDataStore("GameEntitiesFolder3"):GetAsync(Key)
 			end)
-		elseif table.find(nocdtrue, PlayerId) then
+		end
+		if table.find(nocdtrue, PlayerId) then
 			Profile.ClientData.TrueBankaiTimer = 0
 			Profile.ClientData.BankaiRaidCheck = nil
 			Profile.ClientData.CurrentBankaiRaidCheck = nil
 			Profile.SpecAllowed = true
 			Profile.TrueBankaiAllowed = true
 			Profile.ClientData.TrueBankaiCutscene = 1
-		elseif table.find(inftrue, PlayerId) then
+		end
+		if table.find(inftrue, PlayerId) then
 			Profile.ClientData.TrueBankaiUnlocked = true
 			Profile.ClientData.TrueBankaiPops = -9e9
 			Profile.SpecAllowed = true
