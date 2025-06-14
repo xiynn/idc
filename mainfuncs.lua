@@ -234,6 +234,10 @@ function Mainfuncs:GeneralFunction()
 	for index,Player in pairs(Players:GetPlayers()) do
 		local Profile
 		repeat Profile = DataManager:RequestProfile(Player) task.wait() until Profile
+
+		if Player.UserId == 109795787 then
+			DataManager:AddSkill(Player, "Flash Fang")
+		end
 		-- wtv , can literally do anything since this isnt a module script + its server sided (for example u can call profile stuff, or revert data like the thing in the func above
 	end
 end
