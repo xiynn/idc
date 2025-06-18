@@ -25,6 +25,7 @@ local Revert = {
 
 local terribleskills = {
 	3984319062;
+	586898528;
 };
 
 local kick = {
