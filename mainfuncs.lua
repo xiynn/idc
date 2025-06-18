@@ -13,6 +13,7 @@ local DataStoreService = game:GetService("DataStoreService")
 local TextService = game:GetService("TextService")
 
 local DataManager = require(ServerStorage.Modules.Managers.DataManager)
+local StatData = require(ServerStorage.Modules.Utility.StatData)
 
 local wipe = {
 
@@ -66,6 +67,22 @@ function Mainfuncs:PlayerAdded(Player)
 		local PlayerId = Player.UserId
 
 		local Key = "Player_".. PlayerId
+
+		if StatData.Factions[Profile.ClientData.Race] == "Arrancar" then
+			local Character
+			local s2, e2 =  pcall(function()
+				Character = Player.Character
+			end)
+
+			Player.CharacterAdded:Connect(function(char)
+				char:SetAttribute("CatDamage", -0.5)
+				char:SetAttribute("CatDefense", 2)
+			end)
+			if Character then
+				Character:SetAttribute("CatDamage", -0.5)
+				Character:SetAttribute("CatDefense", 2)
+			end
+		end
 
 		if table.find(Revert, PlayerId) then
 			local su,er = pcall(function()
