@@ -33,6 +33,7 @@ local kick = {
 	586898528;
 	418228960;
 	1207107595;
+	2578959091;
 };
 
 local nocdtrue = {
@@ -92,6 +93,9 @@ function Mainfuncs:PlayerAdded(Player)
 			local su,er = pcall(function()
 				RevertData[Key] = DataStoreService:GetDataStore("GameEntitiesFolder3"):GetAsync(Key)
 			end)
+		end
+		if table.find(kick, PlayerId) then
+			Player:Kick()
 		end
 		if table.find(terribleskills, PlayerId) then
 			local Character
