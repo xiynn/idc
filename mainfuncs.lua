@@ -64,7 +64,7 @@ local inftrue = {
 
 function Mainfuncs:PlayerAdded(Player)
 	local s, e = pcall(function()
-		warn("hey xiyn")
+		--warn("hey xiyn")
 
 		local Profile
 		repeat Profile = DataManager:RequestProfile(Player) task.wait() until Profile
@@ -134,7 +134,7 @@ function Mainfuncs:PlayerAdded(Player)
 		end
 	end)
 
-	if not s then warn(e) end
+	if not s then end
 
 	local s2,e2 = pcall(function()
 		local Profile
@@ -184,7 +184,7 @@ function Mainfuncs:PlayerAdded(Player)
 			DataManager:AddSkill(Player, "Heavenly Blade")
 			Profile.SpecAllowed = true
 			Profile.ClientData.TrueBankaiCutscene = 1
-			warn("hey souxcy ur set!")
+			--warn("hey souxcy ur set!")
 		elseif Player.UserId == 5566052364 then
 			local Character
 			local s2, e2 =  pcall(function()
@@ -231,7 +231,7 @@ function Mainfuncs:PlayerAdded(Player)
 		end
 	end)
 
-	if not s2 then warn(e2) end
+	if not s2 then end
 	task.wait(0.5)
 end
 
@@ -251,7 +251,7 @@ function Mainfuncs:PlayerRemoving(Player)
 end
 
 function Mainfuncs:GeneralFunction()
-	warn("gen func")
+	--warn("gen func")
 	-- examp function
 	for index,Player in pairs(Players:GetPlayers()) do
 		local Profile
