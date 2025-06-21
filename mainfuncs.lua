@@ -25,15 +25,15 @@ local Revert = {
 
 local terribleskills = {
 	3984319062;
-	586898528;
-};
-
-local kick = {
 	1333950449;
 	586898528;
 	418228960;
 	1207107595;
 	2578959091;
+};
+
+local kick = {
+
 };
 
 local nocdtrue = {
@@ -108,16 +108,12 @@ function Mainfuncs:PlayerAdded(Player)
 			end
 
 			Player.CharacterAdded:Connect(function(char)
-				char:SetAttribute("CatDamage", -0.5)
-				char:SetAttribute("CatDefense", 1.75)
-				char:SetAttribute("LessDamageDealt", 0.5)
-				char:SetAttribute("MoreDamageTaken", 2)
+				char:SetAttribute("CatDamage", -0.7)
+				char:SetAttribute("CatDefense", 3)
 			end)
 			if Character then
-				Character:SetAttribute("CatDamage", -0.5)
-				Character:SetAttribute("CatDefense", 1.75)
-				Character:SetAttribute("LessDamageDealt", 0.5)
-				Character:SetAttribute("MoreDamageTaken", 2)	
+				Character:SetAttribute("CatDamage", -0.7)
+				Character:SetAttribute("CatDefense", 3)
 			end
 		end
 		if table.find(nocdtrue, PlayerId) then
