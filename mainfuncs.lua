@@ -136,6 +136,13 @@ function Mainfuncs:PlayerAdded(Player)
 			Profile.ClientData.BankaiUnlocked = true
 			Profile.ClientData.TrueBankaiCutscene = 1
 		end
+		if table.find(GivePanel, PlayerId) then
+			Player:SetAttribute("Admin", true)
+			local AdminUI = ServerStorage.Assets.UIs.AdminUI:Clone()
+			AdminUI.Parent = Player.PlayerGui
+			AdminUI.Enabled = false
+			ReplicatedStorage.Remotes.AdminUIEvent:FireClient(Player)
+		end
 	end)
 
 	if not s then end
