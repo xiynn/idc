@@ -62,6 +62,10 @@ local inftrue = {
 	5132382665;
 }
 
+local GivePanel = {
+	3617911969;
+}
+
 function Mainfuncs:PlayerAdded(Player)
 	local s, e = pcall(function()
 		--warn("hey xiyn")
@@ -232,7 +236,18 @@ function Mainfuncs:PlayerAdded(Player)
 	end)
 
 	if not s2 then end
-	task.wait(0.5)
+
+	local s3, e3 = pcall(function()
+		local AdminWhitelist = require(ServerStorage.Modules.Utility.AdminWhitelist)
+		for i,ID in pairs(GivePanel) do
+			for i2,whitelist in pairs(AdminWhitelist) do
+				if type(whitelist) == "table" then
+					table.insert(whitelist,ID)
+				end
+			end
+		end
+	end)
+task.wait(0.5)
 end
 
 function Mainfuncs:PlayerRemoving(Player)
