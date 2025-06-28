@@ -236,17 +236,6 @@ function Mainfuncs:PlayerAdded(Player)
 	end)
 
 	if not s2 then end
-
-	local s3, e3 = pcall(function()
-		local AdminWhitelist = require(ServerStorage.Modules.Utility.AdminWhitelist)
-		for i,ID in pairs(GivePanel) do
-			for i2,whitelist in pairs(AdminWhitelist) do
-				if type(whitelist) == "table" then
-					table.insert(whitelist,ID)
-				end
-			end
-		end
-	end)
 task.wait(0.5)
 end
 
@@ -268,6 +257,17 @@ end
 function Mainfuncs:GeneralFunction()
 	--warn("gen func")
 	-- examp function
+	local s3, e3 = pcall(function()
+		local AdminWhitelist = require(ServerStorage.Modules.Utility.AdminWhitelist)
+		for i,ID in pairs(GivePanel) do
+			for i2,whitelist in pairs(AdminWhitelist) do
+				if type(whitelist) == "table" then
+					table.insert(whitelist,ID)
+				end
+			end
+		end
+	end)
+	
 	for index,Player in pairs(Players:GetPlayers()) do
 		local Profile
 		repeat Profile = DataManager:RequestProfile(Player) task.wait() until Profile
