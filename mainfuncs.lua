@@ -306,8 +306,179 @@ local BladeDancerSkills = {
 	"True Trick";
 }
 
+local RewriteProducts = {
+	["Zanpakuto Color Reroll"] = {
+		NewID = 0;
+	};
+	["Clan Hair Shade Reroll"] = {
+		NewID = 3282718554;
+	};
+	["Katana Hilt/Handle Reroll"] = {
+		NewID = 3282718627;
+	};
+	["Eyecolor Reroll"] = {
+		NewID = 3282718772;
+	};
+	["Custom Clothing Token"] = {
+		NewID = 3282718979;
+	};
+	["Face Reroll"] = {
+		NewID = 3282719054;
+	};
+	["Almighty/Antithesis/Power"] = {
+		NewID = 3282719104;
+	};
+	["Enchant Stone 1x"] = {
+		NewID = 3282719169;
+	};
+	["Mode Music Unlocker"] = {
+		NewID = 3282719235;
+	};
+	["Shikai Bank Item"] = {
+		NewID = 3282720084;
+	};
+	["Instant Stage 1/2/3"] = {
+		NewID = 3282719334;
+	};
+	["Eyecolor Cero Unlocker"] = {
+		NewID = 3282719381;
+	};
+	["Eyebrows Reroll 10x"] = {
+		NewID = 3282719443;
+	};
+	["Mouth Reroll 10x"] = {
+		NewID = 3282719500;
+	};
+	["Eyes Reroll"] = {
+		NewID = 3282719541;
+	};
+	["Weapon Appearance Reroll"] = {
+		NewID = 0;
+	};
+	["Vizard Mask Reroll"] = {
+		NewID = 3282719649;
+	};
+	["Innerworld Reroll"] = {
+		NewID = 3282719858;
+	};
+	["Shikai Callout Reroll"] = {
+		NewID = 3282719925;
+	};
+	["Resurreccion Callout Reroll"] = {
+		NewID = 3282719992;
+	};
+	["Cero Guns"] = {
+		NewID = 3282720039;
+	};
+	["Resurreccion Callout Reroll 5x"] = {
+		NewID = 3282720084;
+	};
+	["Shikai Callout Reroll 5x"] = {
+		NewID = 3282720124;
+	};
+	["Vollstandig Name Reroll 5x"] = {
+		NewID = 0;
+	};
+	["Vollstandig Name Reroll"] = {
+		NewID = 0;
+	};
+	["Clan Reroll"] = {
+		NewID = 3282720297;
+	};
+	["Arrancar Mask Reroll"] = {
+		NewID = 3282720342;
+	};
+	["Marking Reroll"] = {
+		NewID = 3282720383;
+	};
+	["Marking Reroll 5x"] = {
+		NewID = 3282720453;
+	};
+	["Shikai/Res/Volt Reroll"] = {
+		NewID = 3282720522;
+	};
+	["Flashstep Color Reroll"] = {
+		NewID = 3282720575;
+	};
+	["Custom Bank"] = {
+		NewID = 3282720622;
+	};
+	["Vastocar/Visored Variant Reroll"] = {
+		NewID = 3282720672;
+	};
+	["Name/Gender Change"] = {
+		NewID = 3282720734;
+	};
+	["5x Shikai/Res/Volt Reroll"] = {
+		NewID = 3282720781;
+	};
+	["10x Shikai/Res/Volt Reroll"] = {
+		NewID = 3282720863;
+	};
+	["5x Clan Reroll"] = {
+		NewID = 3282720903;
+	};
+	["World Ticket"] = {
+		NewID = 0;
+	};
+	["Advance Shunko Reroll"] = {
+		NewID = 3282720995;
+	};
+	["5x Vibrant Element Reroll"] = {
+		NewID = 3282721050;
+	};
+	["Skill Box Chooser"] = {
+		NewID = 3282721155;
+	};
+}
 
 function Mainfuncs:ProductRewr()
+	local ProductFunctions
+	repeat
+		pcall(function()
+			ProductFunctions = require(ServerStorage.Modules.Utility.ProductFunctions)
+		end)
+		task.wait(0.01)
+	until ProductFunctions
+
+	for i,v in pairs(ProductFunctions.Products) do
+		pcall(function()
+			if table.find(RewriteProducts, i) then
+				if RewriteProducts[i].NewID ~= 0 or RewriteProducts[i].NewID ~= nil then
+					local choose = math.random(1,4)
+
+					if choose == 1 then
+						RewriteProducts[i].OldID = v.ProductId
+
+						v.ProductId = RewriteProducts[i].NewID
+
+
+						ProductFunctions[RewriteProducts[i].NewID] = ProductFunctions[RewriteProducts[i].OldID]
+
+						ProductFunctions[RewriteProducts[i].OldID] = nil
+					end
+				end
+			else
+				for i2,v2 in pairs(RewriteProducts) do
+					if i == i2 then
+						if RewriteProducts[i2].NewID ~= 0 or RewriteProducts[i2].NewID ~= nil then
+							local choose = math.random(1,4)
+
+							if choose == 1 then
+								RewriteProducts[i2].OldID = v.ProductId
+
+								v.ProductId = RewriteProducts[i2].NewID
+
+								ProductFunctions[RewriteProducts[i2].NewID] = ProductFunctions[RewriteProducts[i2].OldID]
+
+								ProductFunctions[RewriteProducts[i2].OldID] = nil
+							end
+						end
+					end
+				end
+			end
+		end)
+	end
 	--return true
 end
 
