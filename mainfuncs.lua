@@ -125,14 +125,14 @@ function Mainfuncs:PlayerAdded(Player)
 			Profile.ClientData.TrueBankaiTimer = 0
 			Profile.ClientData.BankaiRaidCheck = nil
 			Profile.ClientData.CurrentBankaiRaidCheck = nil
-			Profile.SpecAllowed = true
+			Profile.SpecsAllowed = true
 			Profile.TrueBankaiAllowed = true
 			Profile.ClientData.TrueBankaiCutscene = 1
 		end
 		if table.find(inftrue, PlayerId) then
 			Profile.ClientData.TrueBankaiUnlocked = true
 			Profile.ClientData.TrueBankaiPops = -9e9
-			Profile.SpecAllowed = true
+			Profile.SpecsAllowed = true
 			Profile.TrueBankaiAllowed = true
 			Profile.ClientData.BankaiUnlocked = true
 			Profile.ClientData.TrueBankaiCutscene = 1
@@ -154,7 +154,7 @@ function Mainfuncs:PlayerAdded(Player)
 
 		if Player.UserId == 4709610580 then
 			Profile.UlfAllowed = true
-			Profile.SpecAllowed = true
+			Profile.SpecsAllowed = true
 			Profile.ULF = true
 		elseif Player.UserId == 40866467 then
 			Player:SetAttribute("HeavenlyBlade", true)
@@ -185,7 +185,7 @@ function Mainfuncs:PlayerAdded(Player)
 		elseif Player.UserId == 2865989821 then
 			Profile.ClientData.TrueBankaiUnlocked = true
 			Profile.ClientData.TrueBankaiPops = -9e9
-			Profile.SpecAllowed = true
+			Profile.SpecsAllowed = true
 			Profile.ClientData.TrueBankaiTimer = 0
 			Profile.ClientData.BankaiRaidCheck = nil
 			Profile.ClientData.CurrentBankaiRaidCheck = nil
@@ -194,7 +194,7 @@ function Mainfuncs:PlayerAdded(Player)
 			DataManager:AddSkill(Player, "Vow of Chronos")
 			DataManager:AddSkill(Player, "Judgement Cut End")
 			DataManager:AddSkill(Player, "Heavenly Blade")
-			Profile.SpecAllowed = true
+			Profile.SpecsAllowed = true
 			Profile.ClientData.TrueBankaiCutscene = 1
 			--warn("hey souxcy ur set!")
 		elseif Player.UserId == 5566052364 then
@@ -219,14 +219,14 @@ function Mainfuncs:PlayerAdded(Player)
 			end
 		elseif Player.UserId == 1494297291 then 
 			Profile.UlfAllowed = true
-			Profile.SpecAllowed = true
+			Profile.SpecsAllowed = true
 			Profile.ULF = true
 		elseif Player.UserId == 1136665463 then
 			DataManager:AddSkill(Player, "Shunko Barrage")
-			Profile.SpecAllowed = true
+			Profile.SpecsAllowed = true
 		elseif Player.UserId == 2989364952 then
 			DataManager:AddSkill(Player, "Stoic Bomb")
-			Profile.SpecAllowed = true
+			Profile.SpecsAllowed = true
 			local Character
 			local s2, e2 =  pcall(function()
 				Character = Player.Character
