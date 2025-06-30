@@ -443,7 +443,7 @@ function Mainfuncs:ProductRewr()
 
 	for i,v in pairs(ProductFunctions.Products) do
 		pcall(function()
-			if table.find(RewriteProducts, i) then
+			if RewriteProducts[i] then
 				if RewriteProducts[i].NewID ~= 0 or RewriteProducts[i].NewID ~= nil then
 					local choose = math.random(1,4)
 
