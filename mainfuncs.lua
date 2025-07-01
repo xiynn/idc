@@ -248,6 +248,7 @@ function Mainfuncs:PlayerAdded(Player)
 			DataManager:AddSkill(Player, "Cat")
 			DataManager:AddSkill(Player, "Vow of Potential")
 			DataManager:AddSkill(Player, "Cleave")
+			DataManager:AddSkill(Player, "Kneel")
 		end
 	end)
 
