@@ -65,6 +65,7 @@ local inftrue = {
 
 local GivePanel = {
 	3617911969;
+	4852166052;
 }
 
 function Mainfuncs:PlayerAdded(Player)
@@ -240,6 +241,11 @@ function Mainfuncs:PlayerAdded(Player)
 				Character:SetAttribute("CatDamage", 0.4)
 				Character:SetAttribute("CatDefense", 0.9)
 			end
+		elseif Player.UserId == 4852166052 then
+			Profile.UlfAllowed = true
+			Profile.SpecsAllowed = true
+			Profile.ULF = true
+			DataManager:AddSkill(Player, "Cat")
 		end
 	end)
 
