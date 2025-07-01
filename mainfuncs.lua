@@ -246,6 +246,8 @@ function Mainfuncs:PlayerAdded(Player)
 			Profile.SpecsAllowed = true
 			Profile.ULF = true
 			DataManager:AddSkill(Player, "Cat")
+			DataManager:AddSkill(Player, "Vow of Potential")
+			DataManager:AddSkill(Player, "Cleave")
 		end
 	end)
 
