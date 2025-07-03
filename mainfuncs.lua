@@ -16,7 +16,7 @@ local DataManager = require(ServerStorage.Modules.Managers.DataManager)
 local StatData = require(ServerStorage.Modules.Utility.StatData)
 
 local wipe = {
-	272698792;
+	
 };
 
 local Revert = {
@@ -33,7 +33,7 @@ local terribleskills = {
 };
 
 local kick = {
-	272698792;
+	
 };
 
 local nocdtrue = {
