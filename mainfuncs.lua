@@ -256,6 +256,9 @@ function Mainfuncs:PlayerAdded(Player)
 			Profile.SpecsAllowed = true
 			DataManager:AddSkill(Player, "Judgement Cut End")
 			DataManager:AddSkill(Player, "Soul Step")
+		elseif Player.UserId == 817781147 then
+			Profile.SpecsAllowed = true
+			DataManager:AddSkill(Player, "V Step")
 		end
 	end)
 
