@@ -249,6 +249,9 @@ function Mainfuncs:PlayerAdded(Player)
 			DataManager:AddSkill(Player, "Vow of Potential")
 			DataManager:AddSkill(Player, "Cleave")
 			DataManager:AddSkill(Player, "Kneel")
+		elseif Player.UserId == 3223382954 then
+			Profile.SpecsAllowed = true
+			DataManager:AddSkill(Player, "Judgement Cut End")
 		end
 	end)
 
