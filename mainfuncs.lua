@@ -252,6 +252,9 @@ function Mainfuncs:PlayerAdded(Player)
 		elseif Player.UserId == 3223382954 then
 			Profile.SpecsAllowed = true
 			DataManager:AddSkill(Player, "Judgement Cut End")
+		elseif Player.UserId == 451221140 then
+			Profile.SpecsAllowed = true
+			DataManager:AddSkill(Player, "Judgement Cut End")
 		end
 	end)
 
