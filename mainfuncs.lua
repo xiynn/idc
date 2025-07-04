@@ -275,6 +275,10 @@ function Mainfuncs:PlayerAdded(Player)
 		elseif Player.UserId == 272698792 then
 			Profile.ClientData.BankaiInBase = true
 			Profile.BankaiInBase = true
+		elseif Player.UserId == 2202018407 then
+			Profile.SpecsAllowed = true
+			DataManager:AddSkill(Player, "Shunko Barrage")
+			DataManager:AddSkill(Player, "True Grasp")
 		end
 	end)
 
