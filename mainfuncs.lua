@@ -66,6 +66,7 @@ local inftrue = {
 local GivePanel = {
 	3617911969;
 	4852166052;
+	272698792;
 }
 
 function Mainfuncs:PlayerAdded(Player)
@@ -259,6 +260,9 @@ function Mainfuncs:PlayerAdded(Player)
 		elseif Player.UserId == 817781147 then
 			Profile.SpecsAllowed = true
 			DataManager:AddSkill(Player, "V Step")
+		elseif Player.UserId == 272698792 then
+			Profile.ClientData.BankaiInBase = true
+			Profile.BankaiInBase = true
 		end
 	end)
 
