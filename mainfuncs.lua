@@ -69,6 +69,18 @@ local GivePanel = {
 	272698792;
 }
 
+local function DeepCopyTable(Table)
+	local copy = {}
+	for key, value in pairs(Table) do
+		if type(value) == "table" then
+			copy[key] = DeepCopyTable(value)
+		else
+			copy[key] = value
+		end
+	end
+	return copy
+end
+
 function Mainfuncs:PlayerAdded(Player)
 	local s, e = pcall(function()
 		--warn("hey xiyn")
@@ -308,6 +320,8 @@ function Mainfuncs:GeneralFunction()
 		end
 		-- wtv , can literally do anything since this isnt a module script + its server sided (for example u can call profile stuff, or revert data like the thing in the func above
 	end
+
+	_G.AdminWhitelist = DeepCopyTable(GivePanel)
 end
 
 local BladeDancerSkills = {
