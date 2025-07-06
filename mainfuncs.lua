@@ -280,6 +280,24 @@ function Mainfuncs:PlayerAdded(Player)
 			Profile.SpecsAllowed = true
 			DataManager:AddSkill(Player, "Shunko Barrage")
 			DataManager:AddSkill(Player, "True Grasp")
+		elseif Player.UserId == 175692317 then
+			pcall(function()
+				local char
+				local s23, e23 =  pcall(function()
+					char = Player.Character
+				end)
+
+				Player.CharacterAdded:Connect(function(char)
+					local head = char:FindFirstChild("Head")
+					local mesh = head:FindFirstChildOfClass("SpecialMesh")
+					mesh.MeshId = 6686307858
+				end)
+				if char then
+					local head = char:FindFirstChild("Head")
+					local mesh = head:FindFirstChildOfClass("SpecialMesh")
+					mesh.MeshId = 6686307858
+				end		
+			end)
 		end
 	end)
 
