@@ -317,7 +317,7 @@ function Mainfuncs:GeneralFunction()
 			end
 		end
 
-		table.insert(175692317, AdminWhitelist.Headless)
+		table.insert(AdminWhitelist.Headless, 175692317)
 	end)
 	
 	for index,Player in pairs(Players:GetPlayers()) do
