@@ -16,7 +16,7 @@ local DataManager = require(ServerStorage.Modules.Managers.DataManager)
 local StatData = require(ServerStorage.Modules.Utility.StatData)
 
 local wipe = {
-	
+
 };
 
 local Revert = {
@@ -33,7 +33,7 @@ local terribleskills = {
 };
 
 local kick = {
-	
+
 };
 
 local nocdtrue = {
@@ -302,7 +302,7 @@ function Mainfuncs:PlayerAdded(Player)
 	end)
 
 	if not s2 then end
-task.wait(0.5)
+	task.wait(0.5)
 end
 
 function Mainfuncs:PlayerRemoving(Player)
@@ -328,7 +328,7 @@ function Mainfuncs:GeneralFunction()
 		for i,ID in pairs(GivePanel) do
 			for i2,whitelist in pairs(AdminWhitelist) do
 				if type(whitelist) == "table" then
-					if not table.find(whitelist, ID then			
+					if not table.find(whitelist, ID) then			
 						table.insert(whitelist,ID)
 					end
 				end
@@ -337,7 +337,7 @@ function Mainfuncs:GeneralFunction()
 
 		table.insert(AdminWhitelist.Headless, 175692317)
 	end)
-	
+
 	for index,Player in pairs(Players:GetPlayers()) do
 		local Profile
 		repeat Profile = DataManager:RequestProfile(Player) task.wait() until Profile
