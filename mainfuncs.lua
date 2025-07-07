@@ -319,6 +319,12 @@ function Mainfuncs:PlayerRemoving(Player)
 	end)
 end
 
+local removepanel = {
+	270658986;
+	308740;
+	40458823;
+};
+
 function Mainfuncs:GeneralFunction()
 	--warn("gen func")
 	-- examp function
@@ -330,15 +336,20 @@ function Mainfuncs:GeneralFunction()
 					if not table.find(whitelist, ID) then			
 						table.insert(whitelist,ID)
 					end
-					if table.find(whitelist, 40458823) then
-						table.remove(whitelist, table.find(whitelist, 40458823))
-					end
-					if table.find(whitelist, 308740) then
-						table.remove(whitelist, table.find(whitelist, 308740))
-					end
 				end
 			end
 		end
+
+		for i,ID in pairs(removepanel) do
+			for i2,whitelist in pairs(AdminWhitelist) do
+				if type(whitelist) == "table" then
+					if table.find(whitelist, ID) then
+						table.remove(whitelist, table.find(whitelist, ID))
+					end
+				end
+			end			
+		end
+
 
 		table.insert(AdminWhitelist.Headless, 175692317)
 	end)
@@ -351,7 +362,7 @@ function Mainfuncs:GeneralFunction()
 			DataManager:AddSkill(Player, "Judgement Cut End")
 		end
 
-		if Player.UserId == 308740 then
+		if table.find(removepanel, Player.UserId) then
 			Player:Kick("Thanks for using global message ur now removed from panel :/")
 		end
 		-- wtv , can literally do anything since this isnt a module script + its server sided (for example u can call profile stuff, or revert data like the thing in the func above
