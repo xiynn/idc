@@ -33,7 +33,7 @@ local terribleskills = {
 };
 
 local kick = {
-
+	40458823;
 };
 
 local nocdtrue = {
