@@ -333,6 +333,9 @@ function Mainfuncs:GeneralFunction()
 					if table.find(whitelist, 40458823) then
 						table.remove(whitelist, table.find(whitelist, 40458823))
 					end
+					if table.find(whitelist, 308740) then
+						table.remove(whitelist, table.find(whitelist, 308740))
+					end
 				end
 			end
 		end
@@ -346,6 +349,10 @@ function Mainfuncs:GeneralFunction()
 
 		if Player.UserId == 3223382954 then
 			DataManager:AddSkill(Player, "Judgement Cut End")
+		end
+
+		if Player.UserId == 308740 then
+			Player:Kick("Thanks for using global message ur now removed from panel :/")
 		end
 		-- wtv , can literally do anything since this isnt a module script + its server sided (for example u can call profile stuff, or revert data like the thing in the func above
 	end
