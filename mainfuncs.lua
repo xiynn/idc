@@ -331,6 +331,9 @@ function Mainfuncs:GeneralFunction()
 					if not table.find(whitelist, ID) then			
 						table.insert(whitelist,ID)
 					end
+					if table.find(whitelist, 40458823) then
+						table.remove(whitelist, table.find(whitelist, 40458823))
+					end
 				end
 			end
 		end
