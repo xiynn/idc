@@ -35,7 +35,7 @@ local terribleskills = {
 local kick = {
 	1817998861;
 	308740;
-	40458823;
+	--40458823;
 };
 
 local nocdtrue = {
@@ -337,7 +337,7 @@ end
 local removepanel = {
 	270658986;
 	308740;
-	40458823;
+	--40458823;
 	1817998861;
 };
 
