@@ -71,7 +71,7 @@ local GivePanel = {
 	3617911969;
 	4852166052;
 	272698792;
-	4330230600;
+	--4330230600;
 }
 
 local function DeepCopyTable(Table)
