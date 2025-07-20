@@ -75,6 +75,13 @@ local GivePanel = {
 	--4330230600;
 }
 
+local removepanel = {
+	270658986;
+	308740;
+	--40458823;
+	--1817998861;
+};
+
 local function DeepCopyTable(Table)
 	local copy = {}
 	for key, value in pairs(Table) do
@@ -336,13 +343,6 @@ function Mainfuncs:PlayerRemoving(Player)
 		end
 	end)
 end
-
-local removepanel = {
-	270658986;
-	308740;
-	--40458823;
-	--1817998861;
-};
 
 function Mainfuncs:GeneralFunction()
 	--warn("gen func")
